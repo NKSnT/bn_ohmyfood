@@ -7,7 +7,7 @@
      <!--import font-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&family=Shrikhand&display=swap" rel="stylesheet">
      
      <!--font awesome import personal link-->
      <script src="https://kit.fontawesome.com/da588a1054.js" crossorigin="anonymous"></script>
@@ -57,13 +57,13 @@
           <div class="info__step"><p>Dégustez au restaurant</p></div>
      </div>
      
-     <section class="section">
+     <section class="section--restaurant">
 
           <h2>Restaurants</h2>
           <!--carte des restaurants *4-->
                <div class="card">
 
-                    <a href="#" class="">
+                    <a href="#" class="card__link">
                         
                               <img src="assets/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                               alt="" class="card__image" >
@@ -73,25 +73,29 @@
                                    <h3 class="card__restaurant">La palette du goût</h3>
                                    <p class="card__location">Ménilmontant</p>
                               </div>
-                              <div class="card__button"> </div>
-                         </div>                    
+                              <i class="fa-regular fa-heart card__favory"></i>
+                              
+                         </div> 
+                                          
                     </a>
                </div>         
      </section> 
         
      <div class="footer__container">
           <footer class="footer">
+               <figure class="footer-info">
+                    <figcaption><h1 class="footer-info__title">ohmyfood</h1></figcaption>
+                    <ul class="">
+                         <li class="footer-info__link"><a href="#" class="footer-list__info--link">Proposer un restaurant</a></li>
+                         <li class="footer-info__link"><a href="#" class="footer-list__info--link">Devenir partenaire</a></li>
+                         <li class="footer-info__link"><a href="#" class="footer-list__info--link">Mentions légales</a></li>
+                         <li class="footer-info__link"><a href="#" class="footer-list__info--link">Contact</a></li>
+                    </ul>                
+               </figure>
+          </footer>
+     </div>
 
-          <ul class="footer-list">
-               <li class="footer-list__info">ohmyfood</li>
-               <li class="footer-list__info"><a href="#" class="footer-list__info--link">Proposer un restaurant</a></li>
-               <li class="footer-list__info"><a href="#" class="footer-list__info--link">Devenir partenaire</a></li>
-               <li class="footer-list__info"><a href="#" class="footer-list__info--link">Mentions légales</a></li>
-               <li class="footer-list__info"><a href="#" class="footer-list__info--link">Contact</a></li>
-
-          </ul>                
- 
-     </footer>
+</div>     
 </div>
 </body>
 

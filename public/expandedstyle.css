@@ -47,30 +47,11 @@ html {
 
 .wrapper {
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   /*contruction help*/
   max-width: 600px;
-}
-
-.footer__container {
-  background-color: #3d3d3d;
-}
-.footer__container .list__element {
-  color: white;
-}
-.footer__container .list__element a {
-  color: white;
-}
-
-.footer-list__info {
-  color: white;
-}
-.footer-list--link {
-  color: white;
 }
 
 /* font*/
@@ -82,7 +63,7 @@ body {
 }
 
 h1 {
-  font-family: "Shrikhand", sans-serif;
+  font-family: "Shrikhand", cursive;
   font-weight: bold;
   font-style: normal;
 }
@@ -92,6 +73,10 @@ a {
   color: inherit;
 }
 
+ul {
+  list-style: none;
+}
+
 .card {
   border-radius: 16px 16px 16px 16px;
   width: 100%;
@@ -99,20 +84,48 @@ a {
   margin-bottom: 20px;
   background-color: white;
 }
+.card__link {
+  display: flex;
+  flex-direction: column;
+}
 .card__image {
   border-radius: 16px 16px 0px 0px;
   width: 100%;
-  height: 150px;
+  height: 175px;
   object-fit: cover;
+}
+.card__body {
+  padding: 15px 15px 15px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card__favory {
+  display: flex;
+  align-items: center;
+  font-size: larger;
 }
 
 .section {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   background-color: #F2F2F2;
+}
+
+.footer .footer-info {
+  color: white;
+}
+.footer .footer-info__title {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.footer__container {
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+  background-color: #3d3d3d;
 }
 
 /*# sourceMappingURL=expandedstyle.css.map */
