@@ -21,34 +21,30 @@
 </head>
 
 
-<body>
-<!-- container a changer en wrapper pasque je pref-->
+<body>     
 <div class="main_container">
 <div class="wrapper">     
      
-     <header class=""> 
+     <header class="header"> 
           <div>
                <img src="assets/logo/ohmyfood.png" 
                alt="logo booki" width="100" height="50" class="">
           </div>              
      </header > 
      <!--partie recherche de ville-->
-     <div>
-          <form method="post" action="traitement.php" class="">                                                          
-               <label for="location" class="BCgrey"> 
-                    <i class="fa-solid fa-location-dot "></i>
-               </label>    
-
+     <section class="section--research">
+          <form method="post" action="traitement.php" class="research__field">                                                          
+                   
                <input type="search" name="location" 
-                      value="Paris, Bellville" class=""/>                                 
-               <input type="submit" class="" value="" name=""/>
-                  
+                      value="&#xf3c5;   Paris, Bellville" class="fa fa-input"/>
+                      
           </form>     
+<!--il faut que je regle la typo de paris,bellville qui n'est pas la bonne-->
           <h2>Réservez le menu qui vous convient</h2>   
           <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-          <input type="submit" value="Rechercher" name="" id="s" />
+          <input type="submit" class="button" value="Explorer nos restaurants" name="" id="" />
           <!--pas sur que bouton input est le plsu aproprié, peu etre un bouton reutilisable ?--> 
-     </div>
+     </section>
      <!--zone info étapes-->
      <div class="info">
           <h2 class="info__title">Fonctionnement</h2>
