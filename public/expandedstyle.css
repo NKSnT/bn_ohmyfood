@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/*en géneral on import les utilitaire d abord 
+puis les tiers,
+les base
+composant
+layout
+pages
+theme*/
+/*
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+*/
+/*@charset 'utf-8';*/
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/*-----------------------------------------------*/
+/* ID &ID classe*/
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__container {
+  background-color: #3d3d3d;
+}
+.footer__container .list__element {
+  color: white;
+}
+.footer__container .list__element a {
+  color: white;
+}
+
+.footer-list__info {
+  color: white;
+}
+.footer-list--link {
+  color: white;
+}
+
+.wrapper {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* font*/
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Shrikhand", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=expandedstyle.css.map */
