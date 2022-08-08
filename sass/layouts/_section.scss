@@ -7,7 +7,7 @@
 }
 .section--research{
      width: 100%;
-     padding: 0px 0px 10px 0px;    
+     margin-bottom: 30px;   
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -26,45 +26,53 @@
 }
 //faudra reformé sans les classe masi jsut avec les selecteur
 //faudra aussi le metre ailleur, suru en page components "list"
+.list-container{
+     padding: 10px 20px 10px 20px; 
+     margin-bottom: 25px; 
+     width: 100%;
+}
+//il faut que je repasse les bc et peu etre aussi les font weight sur les class?
 .how-to{
-     &__title{
-          font-size: medium;
-     }
-     &__list{
-          list-style-type: none;
-          
-     }
-     &__step{          
-          border-radius: 15px 15px 15px 15px;
-
-          padding: 10px;
-          margin-top:  10px;
-          margin-bottom: 10px;
-          
-          background-color: $grey;
-          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
-
-          font-size: 12px;
+     width: 100%;
+     figcaption{
           font-weight: bold;
+          margin-bottom: 15px;
+     } 
+     ol {counter-reset: steps;  /* on initialise et nomme un compteur */        
+          display: flex ;
+          flex-direction: column;
+          justify-content: flex-start;    
+          li {
+               list-style-type: none;
+               counter-increment: steps; /* on incrémente le compteur à chaque nouveau li */
+              
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+
+               height: 60px;
+
+               border-radius: 15px 15px 15px 15px;
+
+               padding: 10px 30px 10px 0;
+               margin-top:  15px;
+               margin-bottom: 15px;
+               margin-left: 7.5px; /* sert a aligné l'élement before avec le titre de la list*/
+          
+               background-color: $grey;
+               box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+
+               font-size: 14px;
+               font-weight: bold;
+               
 
           i{
                color: lighten($color:$grey_dark, $amount: 25);
                margin-left: 10px;
                margin-right: 10px;
-          }   
+               font-size: 18px;
+          }
 
-     }
-
-     ol {counter-reset: steps;
-          
-          
-          li {
-               list-style-type: none;
-               counter-increment: steps; /* on incrémente le compteur à chaque nouveau li */
-               margin-bottom: 10px;
-               display: flex;
-               flex-direction: row;
-               align-items: center;
           }
           li:before {              
                content: counter(steps); /* on affiche le compteur */
@@ -72,16 +80,30 @@
                align-items: center;
                justify-content: center;
 
-               height: 15px ;
-               width: 15px;               
+               height: 20px ;
+               width: 20px;               
                margin-right: 8px;	
-               margin-left: -10px;
+               margin-left: -7px;
+
                background: $primary-color;	
-               border-radius: 7.5px;	
+               border-radius: 10px;
+               
+               
+               font-size: 12px;
+               font-weight: 400;
                color: white;		
           }
+          li:last-child{
+               background: lighten($color: $primary-color, $amount: 35) ;
+               i{
+                    color: $primary-color;
+                    
+               }
+          }
+
+          
+     } 
      
-     } /* on initialise et nomme un compteur */
 
 
 }

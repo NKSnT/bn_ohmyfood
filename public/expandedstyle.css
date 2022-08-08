@@ -79,27 +79,15 @@ ul {
 
 .button {
   align-items: center;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 25px 25px 25px 25px;
   border: none;
   padding: 5px 10px 5px 10px;
-  height: 30px;
-  width: 50%;
-  background: #FF79DA;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  height: 45px;
+  width: 60%;
+  background: linear-gradient(#FF79DA, #9356DC);
   color: white;
-}
-
-.research__field {
-  background-color: #eaeaea;
-  height: 50px;
-  width: 100%;
-}
-.research__field input {
-  border: none;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 2px 4px #dbdbdb inset;
-  text-align: center;
-  background-color: inherit;
 }
 
 .card {
@@ -148,7 +136,7 @@ ul {
 
 .section--research {
   width: 100%;
-  padding: 0px 0px 10px 0px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,53 +154,68 @@ ul {
   text-align: center;
 }
 
+.list-container {
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
 .how-to {
-  /* on initialise et nomme un compteur */
+  width: 100%;
 }
-.how-to__title {
-  font-size: medium;
-}
-.how-to__list {
-  list-style-type: none;
-}
-.how-to__step {
-  border-radius: 15px 15px 15px 15px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #f4f4f4;
-  box-shadow: 2px 2px 4px #dbdbdb;
-  font-size: 12px;
+.how-to figcaption {
   font-weight: bold;
-}
-.how-to__step i {
-  color: #7d7d7d;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-bottom: 15px;
 }
 .how-to ol {
-  counter-reset: steps;
+  counter-reset: steps; /* on initialise et nomme un compteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .how-to ol li {
   list-style-type: none;
   counter-increment: steps; /* on incrémente le compteur à chaque nouveau li */
-  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 60px;
+  border-radius: 15px 15px 15px 15px;
+  padding: 10px 30px 10px 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 7.5px; /* sert a aligné l'élement before avec le titre de la list*/
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 4px #dbdbdb;
+  font-size: 14px;
+  font-weight: bold;
+}
+.how-to ol li i {
+  color: #7d7d7d;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
 }
 .how-to ol li:before {
   content: counter(steps); /* on affiche le compteur */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   margin-right: 8px;
-  margin-left: -10px;
+  margin-left: -7px;
   background: #9356DC;
-  border-radius: 7.5px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
   color: white;
+}
+.how-to ol li:last-child {
+  background: #f2eafb;
+}
+.how-to ol li:last-child i {
+  color: #9356DC;
 }
 
 .research__field {
