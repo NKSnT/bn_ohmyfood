@@ -40,7 +40,7 @@
           align-items: center;
           font-size: large; 
      &:hover{
-          
+
           background:linear-gradient($secondary-color,$primary-color);
           color: transparent ;
           -webkit-background-clip: text;
@@ -52,7 +52,6 @@
      }
      &--on{
           display: none;
-
           background:linear-gradient($secondary-color,$primary-color);
           color: transparent ;
           -webkit-background-clip: text;
