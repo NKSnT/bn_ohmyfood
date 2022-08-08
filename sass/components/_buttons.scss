@@ -14,4 +14,56 @@
      background:linear-gradient($secondary-color,$primary-color) ;
      color: white;
 }
+/*
+.heart-btn{
+     &--off{
+       display: none;
+     }
+     &--on{
+          display: none;
+     }
+     &--on:hover{
+          background:linear-gradient($secondary-color,$primary-color);
+          color: transparent ;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-text-fill-color: transparent;
+         // color: linear-gradient($primary-color,$secondary-color);
+     }
+}*/
+.heart-btn{
+     
+     &--off{
+          display: flex;
+          align-items: center;
+          font-size: large; 
+     &:hover{
+          
+          background:linear-gradient($secondary-color,$primary-color);
+          color: transparent ;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-text-fill-color: transparent;
+          }         
+     }
+     &--on{
+          display: none;
 
+          background:linear-gradient($secondary-color,$primary-color);
+          color: transparent ;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-text-fill-color: transparent;
+     }
+     
+}
+
+.hid{
+     display: none;
+}

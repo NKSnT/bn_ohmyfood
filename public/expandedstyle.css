@@ -90,12 +90,78 @@ ul {
   color: white;
 }
 
+/*
+.heart-btn{
+     &--off{
+       display: none;
+     }
+     &--on{
+          display: none;
+     }
+     &--on:hover{
+          background:linear-gradient($secondary-color,$primary-color);
+          color: transparent ;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-text-fill-color: transparent;
+         // color: linear-gradient($primary-color,$secondary-color);
+     }
+}*/
+.heart-btn--off {
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+.heart-btn--off:hover {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.heart-btn--on {
+  display: none;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.hid {
+  display: none;
+}
+
 .card {
   border-radius: 16px 16px 16px 16px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: white;
+  /*
+       &__favorite{
+            display: flex;
+            align-items: center;          
+            i{
+                 font-size: x-large;
+            }
+            */
+  /*
+       span{
+            display: flex;
+            align-items: center;          
+            .card__favorite{
+                 font-size: x-large;
+            }
+
+  }     
+   */
 }
 .card__link {
   display: flex;
@@ -126,11 +192,6 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-.card__favory {
-  display: flex;
-  align-items: center;
-  font-size: larger;
 }
 
 .header {

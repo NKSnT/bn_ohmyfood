@@ -45,13 +45,26 @@
           flex-direction: row;
           justify-content: space-between;
      }    
-
-     &__favory{
+/*
+     &__favorite{
           display: flex;
-          align-items: center;
-          font-size: larger;
+          align-items: center;          
+          i{
+               font-size: x-large;
+          }
+          */
+
+          // important !!! ici a metre le bouton en include pasque sinn c la merde!
+          /*
+          span{
+               display: flex;
+               align-items: center;          
+               .card__favorite{
+                    font-size: x-large;
+               }
+              
      }     
-     
+      */
     // &__restaurant{}
      //&__location{}
 
