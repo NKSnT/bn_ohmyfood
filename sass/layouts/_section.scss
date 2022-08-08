@@ -24,3 +24,64 @@
      background-color: $grey;  
      text-align: center;   
 }
+//faudra reformé sans les classe masi jsut avec les selecteur
+//faudra aussi le metre ailleur, suru en page components "list"
+.how-to{
+     &__title{
+          font-size: medium;
+     }
+     &__list{
+          list-style-type: none;
+          
+     }
+     &__step{          
+          border-radius: 15px 15px 15px 15px;
+
+          padding: 10px;
+          margin-top:  10px;
+          margin-bottom: 10px;
+          
+          background-color: $grey;
+          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+
+          font-size: 12px;
+          font-weight: bold;
+
+          i{
+               color: lighten($color:$grey_dark, $amount: 25);
+               margin-left: 10px;
+               margin-right: 10px;
+          }   
+
+     }
+
+     ol {counter-reset: steps;
+          
+          
+          li {
+               list-style-type: none;
+               counter-increment: steps; /* on incrémente le compteur à chaque nouveau li */
+               margin-bottom: 10px;
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+          }
+          li:before {              
+               content: counter(steps); /* on affiche le compteur */
+               display: flex;
+               align-items: center;
+               justify-content: center;
+
+               height: 15px ;
+               width: 15px;               
+               margin-right: 8px;	
+               margin-left: -10px;
+               background: $primary-color;	
+               border-radius: 7.5px;	
+               color: white;		
+          }
+     
+     } /* on initialise et nomme un compteur */
+
+
+}

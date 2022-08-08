@@ -166,6 +166,69 @@ ul {
   text-align: center;
 }
 
+.how-to {
+  /* on initialise et nomme un compteur */
+}
+.how-to__title {
+  font-size: medium;
+}
+.how-to__list {
+  list-style-type: none;
+}
+.how-to__step {
+  border-radius: 15px 15px 15px 15px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 4px #dbdbdb;
+  font-size: 12px;
+  font-weight: bold;
+}
+.how-to__step i {
+  color: #7d7d7d;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.how-to ol {
+  counter-reset: steps;
+}
+.how-to ol li {
+  list-style-type: none;
+  counter-increment: steps; /* on incrémente le compteur à chaque nouveau li */
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.how-to ol li:before {
+  content: counter(steps); /* on affiche le compteur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+  margin-left: -10px;
+  background: #9356DC;
+  border-radius: 7.5px;
+  color: white;
+}
+
+.research__field {
+  background-color: #eaeaea;
+  height: 50px;
+  width: 100%;
+}
+.research__field input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 2px 4px #dbdbdb inset;
+  text-align: center;
+  background-color: inherit;
+}
+
 .footer .footer-info {
   color: white;
 }
