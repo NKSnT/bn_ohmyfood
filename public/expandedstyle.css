@@ -111,20 +111,23 @@ ul {
 }*/
 .heart-btn--off {
   font-size: x-large;
-}
-.heart-btn--off:hover {
-  background: linear-gradient(#FF79DA, #9356DC);
-  color: transparent;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  /* marche mais en attente parsque pour les test hover est plus simple
+  &:hover{
+
+       background:linear-gradient($secondary-color,$primary-color);
+       color: transparent ;
+       -webkit-background-clip: text;
+       -moz-background-clip: text;
+       background-clip: text;
+       -webkit-text-fill-color: transparent; 
+       -moz-text-fill-color: transparent;
+       }
+       */
 }
 .heart-btn--off:active + .heart-btn--on {
-  font-size: x-large;
-  transform: scale(1.05);
-  transition: transform 1s;
+  animation: favorite 0.5s;
+  animation-fill-mode: forwards;
+  scale: 1.15;
 }
 .heart-btn--on {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -134,9 +137,21 @@ ul {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  transform: scale(0);
+  font-size: x-large;
+  scale: 0;
 }
 
+@keyframes favorite {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .card {
   border-radius: 16px 16px 16px 16px;
   width: 100%;
