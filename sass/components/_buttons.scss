@@ -2,46 +2,41 @@
      
      align-items: center;
 
+     height: 45px;
+     width: 60%;
+
      border-radius: 25px 25px 25px 25px;
      border: none;
      padding: 5px 10px 5px 10px;
      margin-top: 30px ;
      margin-bottom: 40px;
 
-     height: 45px;
-     width: 60%;
+     box-shadow: 0px 2px 7px darken($color: $grey, $amount: 27.5);
+     //box-shadow: 0px 2px 5px red;
+     
 
      background:linear-gradient($secondary-color,$primary-color) ;
      color: white;
+     &:hover{
+                    
+          $lighten-bc-color1: lighten($color: $secondary-color, $amount: 2.5);
+          $lighten-bc-color2: lighten($color: $primary-color, $amount: 2.5);
+
+          background: linear-gradient($lighten-bc-color1,$lighten-bc-color2);
+
+          box-shadow: 0px 2px 7px  darken($color: $grey, $amount: 55);
+     }
 }
-/*
-.heart-btn{
-     &--off{
-       display: none;
-     }
-     &--on{
-          display: none;
-     }
-     &--on:hover{
-          background:linear-gradient($secondary-color,$primary-color);
-          color: transparent ;
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent; 
-          -moz-text-fill-color: transparent;
-         // color: linear-gradient($primary-color,$secondary-color);
-     }
-}*/
+
 .heart-btn{
 
 
      &--off{
           font-size: x-large;
-          /* marche mais en attente parsque pour les test hover est plus simple
+          
           &:hover{
 
-               background:linear-gradient($secondary-color,$primary-color);
+               background:linear-gradient($tersiary-color,$primary-color);
                color: transparent ;
                -webkit-background-clip: text;
                -moz-background-clip: text;
@@ -49,11 +44,10 @@
                -webkit-text-fill-color: transparent; 
                -moz-text-fill-color: transparent;
                }
-               */               
+                         
            
-          &:active + .heart-btn--on{                              
-               //font-size: x-large;
-               //transform: scale(1.05);
+          &:active + .heart-btn--on{ 
+               //transform: scale(1.05); premiere version, avec la transformation sans les keyframe
                //transition: transform 1s;
                //transform: scale(0);
                animation: favorite 0.5s ;  
@@ -81,7 +75,7 @@
 @keyframes favorite{
      0% {
          transform: scale(0);
-         //opacity: 1;
+         //opacity: 1; test avec les keyframe, pas utile 
      }
      90%{
           transform: scale(1.1);
