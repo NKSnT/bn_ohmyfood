@@ -110,9 +110,7 @@ ul {
      }
 }*/
 .heart-btn--off {
-  display: flex;
-  align-items: center;
-  font-size: large;
+  font-size: x-large;
 }
 .heart-btn--off:hover {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -123,8 +121,12 @@ ul {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+.heart-btn--off:active + .heart-btn--on {
+  font-size: x-large;
+  transform: scale(1.05);
+  transition: transform 1s;
+}
 .heart-btn--on {
-  display: none;
   background: linear-gradient(#FF79DA, #9356DC);
   color: transparent;
   -webkit-background-clip: text;
@@ -132,10 +134,7 @@ ul {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-}
-
-.hid {
-  display: none;
+  transform: scale(0);
 }
 
 .card {
@@ -190,6 +189,7 @@ ul {
 .card__body {
   padding: 15px 15px 15px 15px;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }

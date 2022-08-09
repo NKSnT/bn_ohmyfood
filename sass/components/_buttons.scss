@@ -34,13 +34,28 @@
      }
 }*/
 .heart-btn{
-     
+
+
      &--off{
-          display: flex;
-          align-items: center;
-          font-size: large; 
-     &:hover{
+          font-size: x-large; 
+          &:hover{
 
+               background:linear-gradient($secondary-color,$primary-color);
+               color: transparent ;
+               -webkit-background-clip: text;
+               -moz-background-clip: text;
+               background-clip: text;
+               -webkit-text-fill-color: transparent; 
+               -moz-text-fill-color: transparent;
+               }
+          &:active + .heart-btn--on{               
+               font-size: x-large;
+               transform: scale(1.05);
+               transition: transform 1s;   
+
+          }
+     }
+     &--on{       
           background:linear-gradient($secondary-color,$primary-color);
           color: transparent ;
           -webkit-background-clip: text;
@@ -48,21 +63,8 @@
           background-clip: text;
           -webkit-text-fill-color: transparent; 
           -moz-text-fill-color: transparent;
-          }         
+          transform: scale(0);
+           
+          
      }
-     &--on{
-          display: none;
-          background:linear-gradient($secondary-color,$primary-color);
-          color: transparent ;
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent; 
-          -moz-text-fill-color: transparent;
-     }
-     
-}
-
-.hid{
-     display: none;
-}
+}    
