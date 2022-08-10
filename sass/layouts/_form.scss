@@ -8,7 +8,11 @@
           height: 100%;
           box-shadow: 0px 2px 4px darken($color: $grey, $amount: 10) inset;
           text-align: center;
-          background-color: inherit;
+          
+          background-color: inherit;      
+          &[value="&#xf3c5;   Paris, Bellville"]{
+               color: red;
+          }
           
      }
 }

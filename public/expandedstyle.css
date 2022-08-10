@@ -294,6 +294,9 @@ ul {
   text-align: center;
   background-color: inherit;
 }
+.research__field input[value="&#xf3c5;   Paris, Bellville"] {
+  color: red;
+}
 
 .footer {
   padding-bottom: 30px;
