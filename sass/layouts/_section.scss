@@ -17,12 +17,13 @@
 
 .section--restaurant{
      width: 100%;
-     padding: 10px 20px 10px 20px;    
+     padding: 10px 20px 40px 20px;    
      display: flex;
      flex-direction: column;
      align-items: center;
      background-color: $grey;  
-     text-align: center;   
+     text-align: center; 
+
 }
 //faudra reformé sans les classe masi jsut avec les selecteur
 //faudra aussi le metre ailleur, suru en page components "list"

@@ -1,0 +1,13 @@
+{
+  "name": "simple-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "sass": "sass --watch ./sass/main.scss:./public/style.css --style=expanded",
+     "sasscompressed":"sass --watch ./sass/main.scss:./public/compstyle.css --style=compressed"        
+  },
+
+  "author": "",
+  "license": "ISC"
+}

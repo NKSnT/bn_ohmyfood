@@ -1,10 +1,22 @@
 .footer{         
-     
+     padding-bottom: 30px;
      .footer-info{
           color: $white;  
           &__title{
-               font-size: 16px;
+               font-size: 18px;
                font-weight: normal;
+               margin-bottom: 20px;
+          }
+          &__link{
+               margin: 10px 0px 10px 0px;
+               &-ico{
+                    margin-right: 10px;
+                    font-size: 12px;
+               }
+          .fa-rotate-by {
+               --fa-rotate-angle: -45deg;
+          } 
+
           }
      }
 

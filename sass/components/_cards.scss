@@ -5,17 +5,19 @@
      margin-top: 20px;
      margin-bottom: 20px;
      background-color: white;
+
+     box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
      &__link{
           display: flex;
           flex-direction: column;
          }
      &__image-container{
           position: relative; 
-        
+          height: 175px;
      img{               
           border-radius: 16px 16px 0px 0px;
           width: 100%;
-          height: 175px;
+          height: 100%;
           object-fit: cover;
           
                    
@@ -46,27 +48,12 @@
           flex-direction: row;
           justify-content: space-between;
      }    
-/*
-     &__favorite{
-          display: flex;
-          align-items: center;          
-          i{
-               font-size: x-large;
-          }
-          */
 
-          // important !!! ici a metre le bouton en include pasque sinn c la merde!
-          /*
-          span{
-               display: flex;
-               align-items: center;          
-               .card__favorite{
-                    font-size: x-large;
-               }
-              
-     }     
-      */
-    // &__restaurant{}
-     //&__location{}
+     &__restaurant{
+          margin-bottom: 5px;
+     }
+     &__location{
+          text-align: left;
+     }
 
 }
