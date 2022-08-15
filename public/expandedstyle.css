@@ -125,12 +125,12 @@ html {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  animation: main_container_rev 500ms 50ms linear reverse both;
+  animation: main_container_rev 500ms 0s linear reverse both;
 }
 .check-animation .main-container .check-container {
   height: 30px;
   width: 30px;
-  animation: check_container_rev 500ms 50ms linear reverse forwards;
+  animation: check_container_rev 500ms 0s linear reverse forwards;
 }
 .check-animation .main-container .check-container i {
   color: #99E2D0;
@@ -141,16 +141,16 @@ html {
   border-radius: 15px;
   height: 30px;
   width: 30px;
-  animation: check_rev 500ms 50ms linear reverse forwards;
+  animation: check_rev 500ms 0s linear reverse forwards;
 }
 .check-animation:hover > .main-container {
-  animation: main_container 500ms 50ms linear both;
+  animation: main_container 500ms 0s linear both;
 }
 .check-animation:hover > .main-container .check-container {
-  animation: check_container 500ms 50ms linear forwards;
+  animation: check_container 500ms 0s linear forwards;
 }
 .check-animation:hover > .main-container .check-container i {
-  animation: check 500ms 50ms linear forwards;
+  animation: check 500ms 0s linear forwards;
 }
 
 @keyframes main_container {
@@ -177,6 +177,14 @@ html {
     transform: rotate(360deg);
   }
 }
+@keyframes text {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
 @keyframes main_container_rev {
   0% {
     background-position: left;
@@ -201,6 +209,65 @@ html {
     transform: rotate(360deg);
   }
 }
+@keyframes text_rev {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+.chk-anim__container {
+  display: block;
+  position: relative;
+}
+.chk-anim__container .text-translate {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  animation: text_rev 500ms 0s linear reverse forwards;
+}
+.chk-anim__container .background-translate {
+  height: 77px;
+  width: 80px;
+  border-radius: 0px 16px 16px 0px;
+  background: linear-gradient(to right, white 50%, #99E2D0 50%);
+  background-size: 200% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: main_container_rev 500ms 0s linear reverse both;
+}
+.chk-anim__container .background-translate .chk-translate {
+  height: 30px;
+  width: 30px;
+  animation: check_container_rev 500ms 0s linear reverse forwards;
+}
+.chk-anim__container .background-translate .chk-translate i {
+  color: #99E2D0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+  animation: check_rev 500ms 0s linear reverse forwards;
+}
+.chk-anim:hover .chk-anim__container .text-translate {
+  animation: text 500ms 0s linear forwards;
+}
+.chk-anim:hover .chk-anim__container .background-translate {
+  animation: main_container 500ms 0s linear both;
+}
+.chk-anim:hover .chk-anim__container .background-translate .chk-translate {
+  animation: check_container 500ms 0s linear forwards;
+}
+.chk-anim:hover .chk-anim__container .background-translate .chk-translate i {
+  animation: check 500ms 0s linear forwards;
+}
+
 /* font*/
 body {
   font-family: "Roboto", sans-serif;
@@ -469,6 +536,9 @@ li {
   color: red;
 }
 
+.list__title {
+  font-weight: bold;
+}
 .list__li {
   display: flex;
   align-items: flex-end;

@@ -1,6 +1,7 @@
 .list{
      &__title{
-
+          //pour eviter la  notif
+          font-weight: bold;
      }
      &__li{
           display: flex;
