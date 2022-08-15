@@ -115,79 +115,24 @@ html {
   }
 }
 /*---------------------------------------------------------------*/
-.test .check-animation {
+.check-animation .main-container {
   height: 77px;
   width: 80px;
   border-radius: 0px 16px 16px 0px;
   background: linear-gradient(to right, white 50%, #99E2D0 50%);
   background-size: 200% 100%;
-  display: none;
-}
-.test .check-animation i {
-  color: #99E2D0;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  height: 30px;
-  width: 30px;
-}
-.test:hover > .check-animation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: check-order 2s linear forwards;
-}
-.test:hover > .check-animation i {
-  animation: check-order__ico 2s linear forwards;
-}
-
-@keyframes check-order {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-@keyframes check-order__ico {
-  0% {
-    transform: translateX(100%) rotate(90deg);
-    transform-origin: 25% 50%;
-  }
-  100% {
-    transform: translateX(0%) rotate(360deg);
-    transform-origin: 50% 50%;
-  }
-}
-.test2:hover > .anim-phase1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: phase1 2s linear forwards;
-}
-.test2:hover > .anim-phase1 .anim-phase2 {
-  animation: phase2 2s linear forwards;
-}
-.test2:hover > .anim-phase1 .anim-phase2 i {
-  animation: phase3 2s linear forwards;
-}
-
-.anim-phase1 {
-  display: none;
-  height: 77px;
-  width: 80px;
-  border-radius: 0px 16px 16px 0px;
-  background: linear-gradient(to right, white 50%, #99E2D0 50%);
-  background-size: 200% 100%;
   overflow: hidden;
+  animation: main_container_rev 500ms 50ms linear reverse both;
 }
-.anim-phase1 .anim-phase2 {
+.check-animation .main-container .check-container {
   height: 30px;
   width: 30px;
+  animation: check_container_rev 500ms 50ms linear reverse forwards;
 }
-.anim-phase1 .anim-phase2 i {
+.check-animation .main-container .check-container i {
   color: #99E2D0;
   background-color: white;
   display: flex;
@@ -196,9 +141,19 @@ html {
   border-radius: 15px;
   height: 30px;
   width: 30px;
+  animation: check_rev 500ms 50ms linear reverse forwards;
+}
+.check-animation:hover > .main-container {
+  animation: main_container 500ms 50ms linear both;
+}
+.check-animation:hover > .main-container .check-container {
+  animation: check_container 500ms 50ms linear forwards;
+}
+.check-animation:hover > .main-container .check-container i {
+  animation: check 500ms 50ms linear forwards;
 }
 
-@keyframes phase1 {
+@keyframes main_container {
   0% {
     background-position: left;
   }
@@ -206,7 +161,7 @@ html {
     background-position: right;
   }
 }
-@keyframes phase2 {
+@keyframes check_container {
   0% {
     transform: translateX(200%);
   }
@@ -214,7 +169,31 @@ html {
     transform: translateX(0%);
   }
 }
-@keyframes phase3 {
+@keyframes check {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes main_container_rev {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+@keyframes check_container_rev {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes check_rev {
   0% {
     transform: rotate(90deg);
   }

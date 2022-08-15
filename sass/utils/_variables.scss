@@ -14,9 +14,15 @@ $secondary-color: $pink;
 $tersiary-color: $mint;
 // hsl(hue, saturation, lightness)
 
+//animation  duration set
+//loader
 $custom-delay: 250ms;
 $loader-duration: 3s;
 $loader-delay: 250ms;
 $time-repeat: 1;
 $page-disp-delay: $custom-delay + $loader-duration + ($loader-delay*$time-repeat ) ;
 $page-disp-delay-test: 3s;
+
+//check order animation
+$check-anim__duration: 500ms;
+$check-anim__delay: 50ms;
