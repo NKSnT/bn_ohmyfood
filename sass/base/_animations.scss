@@ -2,8 +2,7 @@
      position: absolute;
     overflow: hidden;
     opacity: 0;
-
-    // animation: page-display 0s $page-disp-delay-test;
+    
     animation: page-display 0s $page-disp-delay forwards;
 }
 
@@ -79,3 +78,182 @@
         opacity: 1;
      }
  }
+
+ /*---------------------------------------------------------------*/
+ 
+.test{ //faudra changer le test avec un vrais no mde classe
+     
+     .check-animation{
+          
+          height: 77px;
+          width: 80px;
+          border-radius: 0px 16px 16px 0px;
+          background: linear-gradient(to right, white 50%, $tersiary-color 50%);
+          background-size: 200% 100%;
+          display:none;
+          i {
+               color: $tersiary-color;
+               background-color: white;
+
+               display: flex;
+               align-items: center;
+               justify-content: center;
+
+               border-radius: 15px;
+               height: 30px;
+               width: 30px;
+          }
+         
+      }
+
+     &:hover > .check-animation{
+          //flex ou block?
+     display: flex; 
+     justify-content: center; 
+     align-items: center;
+     animation: check-order 2s linear forwards;  
+     i{
+          
+          animation: check-order__ico 2s linear forwards ;
+          
+     }
+      
+     
+     
+ }
+}
+ @keyframes check-order{
+     //lanimation ne marche pas comme prevut, il faut changé lorigine
+     0% {
+         
+         background-position: left; 
+         //transform: rotate(90deg);
+        
+     }     
+     100% {
+         
+          background-position: right;
+          //transform: rotate(360deg);
+     }
+}
+@keyframes check-order__ico{
+     //lanimation ne marche pas comme prevut, il faut changé lorigine
+     0% {
+         
+          transform: translateX(100%) rotate(90deg) ;
+          transform-origin: 25% 50%;
+        
+     }     
+     100% {
+          
+          transform: translateX(0%) rotate(360deg) ;
+          transform-origin: 50% 50%;
+     }
+}
+
+
+
+
+
+
+.test2{//test avec transform
+     &:hover{
+          & >.anim-phase1{
+               //transform: scaleX(1);
+               display: flex; 
+               justify-content: center; 
+               align-items: center;
+              //display: block;
+              //position: absolute;
+              //right: 20px;
+               animation: phase1 2s linear forwards;
+               .anim-phase2{
+                    animation: phase2 2s linear forwards;   
+
+               
+               i{
+                    animation: phase3 2s linear forwards;
+               }
+               }        
+
+               
+
+          }
+     }
+}
+.anim-phase1{
+     display: none;
+     height: 77px;
+     width: 80px;
+     border-radius: 0px 16px 16px 0px;    
+     
+     background: linear-gradient(to right, white 50%, $tersiary-color 50%);
+     background-size: 200% 100%;
+
+     overflow: hidden;
+     
+     .anim-phase2{
+          height: 30px;
+          width: 30px;
+          
+          i {
+          
+          color: $tersiary-color;
+          background-color: white;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 15px;
+          height: 30px;
+          width: 30px;
+          }
+     }
+     
+    
+    
+}
+@keyframes phase1{
+     
+     0% {
+          background-position: left; 
+          
+          
+        
+     }     
+     100% {
+                   
+          background-position: right;
+     }
+}
+@keyframes phase2{
+     
+     0% {
+        
+          transform: translateX(200%);
+         
+        
+     }     
+     100% {
+          
+          transform: translateX(0%);
+
+        
+     }
+}
+@keyframes phase3{
+     
+     0% {
+        
+          transform:  rotate(90deg) ;
+         
+        
+     }     
+     100% {
+          
+          transform: rotate(360deg) ;
+          
+        
+     }
+}

@@ -9,7 +9,8 @@
 
           border-radius: 15px 15px 15px 15px;
 
-          padding: 15px 15px 15px 15px;
+          //padding remplacé par des marg sur les element
+          //padding: 15px 15px 15px 15px;
           margin-top:  15px;
           margin-bottom: 15px;
 
@@ -22,6 +23,9 @@
 
           .bold{
                font-weight: bold;
+          }
+          &-element{
+               margin: 15px;
           }
 
 
