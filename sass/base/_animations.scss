@@ -1,21 +1,53 @@
-.page-display{
-     position: absolute;//why sa ?
-    overflow: hidden;//why sa ? peu etre je peu remove aussi le opacity 0
+@use "sass:math";
+
+.content-display{
+    // position: absolute;//why sa ?
+   // overflow: hidden;//why sa ? 
     opacity: 0;
     
-    animation: page-display 0s $page-disp-delay forwards;
+    animation: page_display 0s $page-disp-delay forwards;   
 }
+.content-display--menu{
+
+     opacity: 0;
+     animation: menu_display $menu-section_duration $menu-section_delay ease-out forwards;
+
+     ul {     
+
+          @for $i from 1 through 5 {
+              
+                 li:nth-child(#{$i}) {
+                    opacity: 0;
+                   // Delay the animation. Delay increases as items loop.
+                   $animation_delay: (($i * $menu-child_delay) + $menu-firstchild_delay) ;
+                   animation: menu_display $menu-child_duration $animation_delay ease-in-out forwards;
+                 }
+               }
+             }  
+          
+     }         
+              
+
 
 .loading-spinner{
 
-     $diameter: 70px; //set the diameter of the loader,
+     $diameter: 200px; //set the diameter of the loader,
      $thickness: 82.5%; //set the thickness or "inner diameter" of the loader,    
      //more is less thick
-     position: relative;
-     margin-top: 25%;
+     $vertical_center: -(($diameter * 0.5)+25px);
+     //+25 compence le decalage donner par le header ? enfin bref valeur magique
+
+     
+
+     position: fixed;
+     
+     top: 50%;
+     
+     margin-top: $vertical_center ;//serta centrer le loader avec le haut
+     //margin-top: 50%;
      width: $diameter;
      height: $diameter;
-     border-radius: 10rem;
+     border-radius: 25%;
      border: 3px solid white;
      
      background: linear-gradient($primary-color, $secondary-color, $primary-color);
@@ -65,7 +97,7 @@
 }
 
 
-@keyframes page-display{
+@keyframes page_display{
      0% {
          //transform: translateX(-9999px);
          //scale:0;
@@ -76,6 +108,21 @@
          
         // scale:1;
         opacity: 1;
+     }
+ }
+ @keyframes menu_display{
+     0% {
+         //transform: translateX(-9999px);
+         //scale:0;
+         opacity: 0;
+         transform: translateY(50px);
+     }
+     100% {
+         //transform: translateX(0);
+         
+        // scale:1;
+        opacity: 1;
+        transform: translateY(0);
      }
  }
 

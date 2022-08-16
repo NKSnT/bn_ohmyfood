@@ -27,3 +27,13 @@ $page-disp-delay-test: 3s;
 $check-anim__duration: 350ms;
 $check-anim__delay: 0s; //si aps a 0 sa fous la merde pasque l icone pope avant l anime
 //et faudrais tout remetre les display dans l anim
+
+//menut aparition animation
+$menu-section_duration: 0.5s;
+$menu-section_delay: 0.25s;
+$menu-child_duration: 500ms ;
+$menu-firstchild_delay: -350ms + $menu-section_delay + $menu-section_duration;
+$menu-child_delay:200ms ;
+
+
+
