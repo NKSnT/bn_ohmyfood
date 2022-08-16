@@ -1,6 +1,6 @@
 .page-display{
-     position: absolute;
-    overflow: hidden;
+     position: absolute;//why sa ?
+    overflow: hidden;//why sa ? peu etre je peu remove aussi le opacity 0
     opacity: 0;
     
     animation: page-display 0s $page-disp-delay forwards;
@@ -81,12 +81,30 @@
 
  /*---------------------------------------------------------------*/
  
-.check-animation{
-
-     .main-container{
-          //display: none;
-          //sert a cacher l' element avant le lancement de l' animation
-          //enfait pas necessaire a priory
+//-----a priory fini
+.chk-anim{
+     .shrink-anim{
+          animation: shrink_rev $check-anim__duration $check-anim__delay linear both alternate;
+     
+     }
+     &__container{
+          //display: flex;
+          //flex-direction: row;
+         // align-items: flex-end;
+         display: block;
+         position: relative;
+          
+          
+          .text-translate{               
+               position: absolute;
+               bottom: 0px;
+               right: 5px;    
+               animation: text_rev $check-anim__duration $check-anim__delay linear reverse forwards;              
+          }
+          
+     
+     .background-translate{ 
+                 
           height: 77px;
           width: 80px;
           border-radius: 0px 16px 16px 0px;    
@@ -101,7 +119,7 @@
           overflow: hidden;
           
           animation: main_container_rev $check-anim__duration $check-anim__delay linear reverse both;
-          .check-container{
+          .chk-translate{
                height: 30px;
                width: 30px;
                animation: check_container_rev $check-anim__duration $check-anim__delay linear reverse forwards;
@@ -123,26 +141,38 @@
                }
           }
      }
+     }
+     
 
+     &:hover {
+          .shrink-anim{
+               animation: shrink $check-anim__duration $check-anim__delay linear both alternate;
+          
+          }
+     }    
+     &:hover .chk-anim__container{
+          
+          .text-translate{
+               animation: text $check-anim__duration $check-anim__delay linear forwards;
+               }
+          
+          .background-translate{
 
-
-     &:hover{
-          & >.main-container{
-              
-              
+               
              
                animation: main_container $check-anim__duration $check-anim__delay linear both;
-               .check-container{
+               .chk-translate{
                     animation: check_container $check-anim__duration $check-anim__delay linear forwards;   
                     i{
                          
                          animation: check  $check-anim__duration $check-anim__delay linear forwards ;
                     }
                }        
-              //animation: name duration timing-function delay iteration-count direction fill-mode;
+            
             
           }
-     }
+     }  
+
 }
 
 @keyframes main_container {
@@ -185,6 +215,16 @@
           transform: translateX(-300%); ;
      }
 }
+@keyframes shrink {    
+     
+     0% {         
+           width: 80%;
+     }  
+     100% {         
+          width : 60% ;
+     }
+}
+
 //reverse
 @keyframes main_container_rev {     
      
@@ -230,89 +270,15 @@
           transform: translateX(-300%); ;
      }
 }
-
-//-----test
-.chk-anim{
-
-     &__container{
-          //display: flex;
-          //flex-direction: row;
-         // align-items: flex-end;
-         display: block;
-         position: relative;
-          
-          
-          .text-translate{               
-               position: absolute;
-               bottom: 5px;
-               right: 5px;    
-               animation: text_rev $check-anim__duration $check-anim__delay linear reverse forwards;              
-          }
-          
+@keyframes shrink_rev {    
      
-     .background-translate{ 
-                 
-          height: 77px;
-          width: 80px;
-          border-radius: 0px 16px 16px 0px;    
-          
-          background: linear-gradient(to right, white 50%, $tersiary-color 50%);
-          background-size: 200% 100%;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-     
-          overflow: hidden;
-          
-          animation: main_container_rev $check-anim__duration $check-anim__delay linear reverse both;
-          .chk-translate{
-               height: 30px;
-               width: 30px;
-               animation: check_container_rev $check-anim__duration $check-anim__delay linear reverse forwards;
-               
-               i {
-               
-               color: $tersiary-color;
-               background-color: white;                  
-              
-               display: flex;
-               align-items: center;
-               justify-content: center;
-     
-               border-radius: 15px;
-               height: 30px;
-               width: 30px;
-
-               animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
-               }
-          }
+     0% {         
+           width: 60%;
+     }  
+     100% {         
+          width : 80% ;
      }
 }
 
 
-     
-     &:hover .chk-anim__container{
 
-          .text-translate{
-               animation: text $check-anim__duration $check-anim__delay linear forwards;
-               }
-          
-          .background-translate{
-
-               
-             
-               animation: main_container $check-anim__duration $check-anim__delay linear both;
-               .chk-translate{
-                    animation: check_container $check-anim__duration $check-anim__delay linear forwards;   
-                    i{
-                         
-                         animation: check  $check-anim__duration $check-anim__delay linear forwards ;
-                    }
-               }        
-              //animation: name duration timing-function delay iteration-count direction fill-mode;
-            
-          }
-     }  
-
-}

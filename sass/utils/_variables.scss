@@ -24,6 +24,6 @@ $page-disp-delay: $custom-delay + $loader-duration + ($loader-delay*$time-repeat
 $page-disp-delay-test: 3s;
 
 //check order animation
-$check-anim__duration: 500ms;
+$check-anim__duration: 350ms;
 $check-anim__delay: 0s; //si aps a 0 sa fous la merde pasque l icone pope avant l anime
 //et faudrais tout remetre les display dans l anim
