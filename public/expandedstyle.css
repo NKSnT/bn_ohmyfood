@@ -426,9 +426,9 @@ li {
 
 .button {
   align-items: center;
-  height: 45px;
+  height: 55px;
   width: 60%;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 27.5px 27.5px 27.5px 27.5px;
   border: none;
   padding: 5px 10px 5px 10px;
   margin-top: 30px;
@@ -471,6 +471,12 @@ li {
   scale: 0;
 }
 
+.relativ-heart-btn {
+  position: relative;
+  top: -50px;
+  left: 40%;
+}
+
 @keyframes favorite {
   0% {
     transform: scale(0);
@@ -491,8 +497,9 @@ li {
 .card {
   border-radius: 16px 16px 16px 16px;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  height: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: white;
   box-shadow: 2px 2px 4px #dbdbdb;
 }
@@ -539,11 +546,12 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 0px;
   width: 100%;
 }
 .header img {
-  width: 100%;
+  width: 60%;
+  padding: 20px 25px 15px 25px;
 }
 
 .section {
@@ -563,15 +571,30 @@ li {
   background-color: #f4f4f4;
   text-align: center;
 }
+.section--research h2 {
+  padding: 45px 50px 10px 50px;
+}
+.section--research p {
+  font-weight: 300;
+  font-size: 20px;
+  padding: 10px 25px 0 25px;
+}
+.section--research p i {
+  font-size: 15px;
+  margin-right: 20px;
+}
 
 .section--restaurant {
   width: 100%;
-  padding: 10px 20px 40px 20px;
+  padding: 40px 20px 60px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-color: #f4f4f4;
   text-align: center;
+}
+.section--restaurant h2 {
+  margin-bottom: 10px;
 }
 
 .list-container {
@@ -586,6 +609,7 @@ li {
 .how-to figcaption {
   font-weight: bold;
   margin-bottom: 15px;
+  font-size: 22px;
 }
 .how-to ol {
   counter-reset: steps; /* on initialise et nomme un compteur */
@@ -667,17 +691,33 @@ li {
   background-color: #eaeaea;
   height: 50px;
   width: 100%;
+  /*          
+  input{
+       border: none;
+       width: 100%;
+       height: 100%;
+       box-shadow: 0px 2px 4px darken($color: $grey, $amount: 10) inset;
+       text-align: center;
+
+       background-color: inherit;      
+       &[value="&#xf3c5;   Paris, Bellville"]{
+            color: red;
+       }
+
+  }
+  */
 }
-.research__field input {
-  border: none;
+.research__field p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
   width: 100%;
   height: 100%;
   box-shadow: 0px 2px 4px #dbdbdb inset;
   text-align: center;
-  background-color: inherit;
-}
-.research__field input[value="&#xf3c5;   Paris, Bellville"] {
-  color: red;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .list__title {
@@ -741,7 +781,7 @@ li {
 
 .footer__container {
   width: 100%;
-  padding: 10px 20px 10px 20px;
+  padding: 30px 20px 10px 20px;
   background-color: #3d3d3d;
 }
 

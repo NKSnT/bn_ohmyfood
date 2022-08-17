@@ -2,10 +2,10 @@
      
      align-items: center;
 
-     height: 45px;
+     height: 55px;
      width: 60%;
 
-     border-radius: 25px 25px 25px 25px;
+     border-radius: 27.5px 27.5px 27.5px 27.5px;
      border: none;
      padding: 5px 10px 5px 10px;
      margin-top: 30px ;
@@ -29,7 +29,7 @@
 }
 
 .heart-btn{
-
+     
 
      &--off{
           font-size: x-large;
@@ -70,7 +70,12 @@
           scale: 0;
 
      }
-}  
+}
+.relativ-heart-btn {
+     position: relative;
+     top: -50px;
+     left: 40%;
+} 
 
 @keyframes favorite{
      0% {
