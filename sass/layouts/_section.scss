@@ -126,8 +126,11 @@
 
 .menu{
      display: flex;
-     //width: 100%;
+     width: 100%;
      flex-direction: column;
+     align-items: center;
+     background-color: $grey;
+
      &-banner{
           width: 100%;
           &__img{
@@ -140,17 +143,23 @@
 
           position: relative; //sert a effectuer le recouvremetn d'image 
           top: -50px;         //
+          width: 100%;
+          padding: 30px 20px 0px 20px;
 
-          padding: 30px 20px 50px 20px;
-
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           border-radius: 40px 40px 0px 0px;
+
+          background-color: $grey;
+
 
           //display: flex; pas sur que ce soit utile enfait
           //flex-direction: column; 
 
-          background-color: $grey;
-
+          
           &__title{
+               width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;

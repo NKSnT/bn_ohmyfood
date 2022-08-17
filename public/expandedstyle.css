@@ -426,6 +426,7 @@ li {
 
 .button {
   align-items: center;
+  justify-self: center;
   height: 55px;
   width: 60%;
   border-radius: 27.5px 27.5px 27.5px 27.5px;
@@ -488,12 +489,6 @@ li {
     transform: scale(1);
   }
 }
-.return--arrow {
-  display: inline;
-  position: relative;
-  left: 0px;
-}
-
 .card {
   border-radius: 16px 16px 16px 16px;
   width: 100%;
@@ -550,8 +545,22 @@ li {
   width: 100%;
 }
 .header img {
+  flex: 2;
   width: 60%;
   padding: 20px 25px 15px 25px;
+}
+.header .link {
+  flex: 1;
+}
+.header .link a {
+  margin-left: 20px;
+}
+.header .link a i {
+  font-weight: bold;
+  font-size: 22px;
+}
+.header .link_compensate {
+  flex: 1;
 }
 
 .section {
@@ -663,7 +672,10 @@ li {
 
 .menu {
   display: flex;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
 }
 .menu-banner {
   width: 100%;
@@ -675,11 +687,16 @@ li {
 .menu-body {
   position: relative;
   top: -50px;
-  padding: 30px 20px 50px 20px;
+  width: 100%;
+  padding: 30px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 40px 40px 0px 0px;
   background-color: #f4f4f4;
 }
 .menu-body__title {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -720,6 +737,9 @@ li {
   font-size: 16px;
 }
 
+.list {
+  width: 100%;
+}
 .list__title {
   max-width: 100%;
   margin-bottom: 25px;
@@ -730,6 +750,7 @@ li {
   align-items: flex-end;
   justify-content: space-between;
   border-radius: 15px 15px 15px 15px;
+  box-shadow: 2px 2px 4px #dbdbdb;
   margin-top: 15px;
   margin-bottom: 15px;
   background-color: white;

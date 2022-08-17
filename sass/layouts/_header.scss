@@ -5,10 +5,26 @@
      padding:  0px 0px 0px 0px;
      width: 100%; 
      img{
+          flex: 2;
           width: 60%;
           padding: 20px 25px 15px 25px;
           //margin: 10px 20px 10px 20px;
           
+          
      } 
+     .link{
+       flex: 1;   
+       a{
+          margin-left: 20px;
+          i{
+               font-weight: bold;
+               font-size: 22px;
+          }
+       }
+     }
+     .link_compensate{
+          flex:1;
+     }     
+
 }
 
