@@ -22,46 +22,201 @@
 
 
 <body>     
-<div class="main_container">
-     <div class="loading-spinner"></div>
-<div class="wrapper page-display">  
+<div class="main_container">     
+<div class="wrapper">  
 
      
-
-     <header class="header"> 
+     <header class="header">
+          <a href=""><i class="fa-solid fa-arrow-left"></i></a> 
           <div>
                <img src="assets/logo/ohmyfood.png" 
-               alt="logo booki" width="" height="" class="">
+               alt="logo ohmyfood" class="">
           </div>              
      </header > 
-     <!--partie recherche de ville-->
-     <section class="section--research">
-          <form method="post" action="traitement.php" class="research__field">                                                          
-                   
-               <input type="search" name="location" 
-                      value="&#xf3c5;   Paris, Bellville" class="fa fa-input"/>
-                      
-          </form>     
-<!--il faut que je regle la typo de paris,bellville qui n'est pas la bonne-->
-          <h2>Réservez le menu qui vous convient</h2>   
-          <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-          <input type="submit" class="button" value="Explorer nos restaurants" name="" id="" />
-          <!--pas sur que bouton input est le plsu aproprié, peu etre un bouton reutilisable ?--> 
+     <section class="menu content-display--menu2"> 
+
+          <div classe="menu-banner">
+               <img src="assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 
+               alt="image du restaurant a la francaise" class="menu-banner__img">
+          </div>  
+
+           <div class="menu-body"> 
+
+              <div class="menu-body__title">
+                    <h1 class="">À la française</h1>
+                    <span class="fa-stack heart-btn">
+                         <i class="fa-regular fa-heart fa-stack-1x heart-btn--off"></i>
+                         <i class="fa-solid fa-heart fa-stack-1x  heart-btn--on"></i>
+                    </span>
+               </div>                            
+
+                <figure class="list menu__loader ">
+                    <figcaption class="list__title partial-underline ">ENTRÉES</figcaption>
+                    <ul class="list__ul">                    
+                         <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Tartare de poulpe acidulé</h3>
+                                   <p>Aux zests d'orange</p>
+                              </div>
+                              
+                              
+                                  <div class="chk-anim__container">
+                                        <p class="bold list__li-element text-translate">25€</p>
+                                        <div class="background-translate">
+                                             <div class="chk-translate">
+                                                  <i class="fa-solid fa-check"></i>   
+                                             </div> 
+                                        </div>
+                                   </div>
+                         </li>
+
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Velouté de légumes d'antan</h3>
+                                   <p>Carotte, panais, topinambour</p>
+                              </div>
+                              
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">35€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Soupe à l'oignon</h3>
+                                   <p>Revisitée</p>
+                              </div>
+                             
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">20€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                    </ul>
+                </figure>
+
+                <figure class="list menu__loader ">
+                    <figcaption class="list__title partial-underline ">PLATS</figcaption>
+                    <ul class="list__ul">                    
+                         <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Coquilles Saint-Jacques</h3>
+                                   <p>Accompagnées d'une purée de panais</p>
+                              </div>
+                              
+                              
+                                  <div class="chk-anim__container">
+                                        <p class="bold list__li-element text-translate">40€</p>
+                                        <div class="background-translate">
+                                             <div class="chk-translate">
+                                                  <i class="fa-solid fa-check"></i>   
+                                             </div> 
+                                        </div>
+                                   </div>
+                         </li>
+
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Magret de canard</h3>
+                                   <p>Et parmentier de pommes de terres</p>
+                              </div>
+                              
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">35€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Pigeonneau d'ill-et-Vilaine</h3>
+                                   <p>Sur son lit de gnocchis aux légumes</p>
+                              </div>
+                             
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">44€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                    </ul>
+                </figure>
+                
+                <figure class="list menu__loader ">
+                    <figcaption class="list__title partial-underline ">DESSERTS</figcaption>
+                    <ul class="list__ul">                    
+                         <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Pétales de violettes glacés</h3>
+                                   <p>Et purée de noisettes</p>
+                              </div>
+                              
+                              
+                                  <div class="chk-anim__container">
+                                        <p class="bold list__li-element text-translate">18€</p>
+                                        <div class="background-translate">
+                                             <div class="chk-translate">
+                                                  <i class="fa-solid fa-check"></i>   
+                                             </div> 
+                                        </div>
+                                   </div>
+                         </li>
+
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Fondant au chocolat</h3>
+                                   <p>Revisité</p>
+                              </div>
+                              
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">22€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                        <li class="list__li chk-anim">
+                              <div class="list__li-element shrink-anim">
+                                   <h3>Millefeuille croustillant</h3>
+                                   <p>Myrtilles et pâte d'amande</p>
+                              </div>
+                             
+                              <div class="chk-anim__container">
+                                   <p class="bold list__li-element text-translate">23€</p>
+                                   <div class="background-translate">
+                                        <div class="chk-translate">
+                                             <i class="fa-solid fa-check"></i>   
+                                        </div> 
+                                   </div>
+                              </div>
+                         </li>
+                    </ul>
+                </figure>
+          
+          </div>
      </section>
-     <!--zone info étapes-->
-     <div class="list-container"> 
-     <figure class="how-to">
-          <figcaption class="how-to__title">Fonctionnement</figcaption>
-          <ol class="how-to__list">
-              <li class="how-to__step"><i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</li>
-              <li class="how-to__step"><i class="fa-solid fa-list-ul"></i> Composez votre menu</li>
-              <li class="how-to__step"><i class="fa-solid fa-store"></i> Dégustez au restaurant</li>
-          </ol>
-      </figure>
+
+     <div class="test">
+          <p class="">test</p>
+          <p class="check-animation">test</p>
      </div>
-
-
-
+     
 
 
 
@@ -82,7 +237,6 @@
                </figure>
           </footer>
      </div>
-
 </div>     
 </div>
 </body>

@@ -30,10 +30,16 @@ $check-anim__delay: 0s; //si aps a 0 sa fous la merde pasque l icone pope avant 
 
 //menut aparition animation
 $menu-section_duration: 0.5s;
-$menu-section_delay: 0.25s;
+$menu-section_delay: 0.250s;
+$menu-section_delay-mod: -350ms;
+
 $menu-child_duration: 500ms ;
 $menu-firstchild_delay: -350ms + $menu-section_delay + $menu-section_duration;
-$menu-child_delay:200ms ;
+$menu-firstchild_delay-mod: -350ms;
+$menu-child_delay:400ms ;
+
+
+//faudrai un peu remetre les nom au propre
 
 
 
