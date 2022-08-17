@@ -544,7 +544,6 @@ li {
 }
 .header img {
   width: 100%;
-  justify-content: center;
 }
 
 .section {
@@ -705,14 +704,14 @@ li {
   margin: 15px;
 }
 .list__li-element h3 {
-  display: inline-block;
+  display: block;
   margin-bottom: 5px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 .list__li-element p {
-  display: inline-block;
+  display: block;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
