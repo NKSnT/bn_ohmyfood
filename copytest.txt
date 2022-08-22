@@ -155,18 +155,221 @@
  }
 
  /*---------------------------------------------------------------*/
-
- .menu__section{
-     display: flex;
-    flex-direction: column;
-    width: 100%;
-     .menu__element{
-          display: flex;
-          flex-direction: row;
-          flex:1;
-          max-width: 100%;     
-          width: 100%;
+ 
+//-----a priory fini
+.chk-anim{
+     .shrink-anim{
+          animation: shrink_rev $check-anim__duration $check-anim__delay linear both alternate;
      
+     }
+     &__container{
+          //display: flex;
+          //flex-direction: row;
+         // align-items: flex-end;
+         //display: block;
+         //position: relative;
+         display: flex;
+         width: 30%;
+          
+          
+          .text-translate{               
+               position: absolute;
+               bottom: 0px;
+               right: 5px;    
+               animation: text_rev $check-anim__duration $check-anim__delay linear reverse forwards;              
+          }
+          
+     
+     .background-translate{ 
+                 
+          height: 77px;
+          width: 80px;
+          border-radius: 0px 16px 16px 0px;    
+          
+          background: linear-gradient(to right, white 50%, $tersiary-color 50%);
+          background-size: 200% 100%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+     
+          overflow: hidden;
+          
+          animation: main_container_rev $check-anim__duration $check-anim__delay linear reverse both;
+          .chk-translate{
+               height: 30px;
+               width: 30px;
+               animation: check_container_rev $check-anim__duration $check-anim__delay linear reverse forwards;
+               
+               i {
+               
+               color: $tersiary-color;
+               background-color: white;                  
+              
+               display: flex;
+               align-items: center;
+               justify-content: center;
+     
+               border-radius: 15px;
+               height: 30px;
+               width: 30px;
+
+               animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
+               }
+          }
+     }
+     }
+     
+
+     &:hover {
+          .shrink-anim{
+               animation: shrink $check-anim__duration $check-anim__delay linear both alternate;
+          
+          }
+     }    
+     &:hover .chk-anim__container{
+          
+          .text-translate{
+               animation: text $check-anim__duration $check-anim__delay linear forwards;
+               }
+          
+          .background-translate{
+
+               
+             
+               animation: main_container $check-anim__duration $check-anim__delay linear both;
+               .chk-translate{
+                    animation: check_container $check-anim__duration $check-anim__delay linear forwards;   
+                    i{
+                         
+                         animation: check  $check-anim__duration $check-anim__delay linear forwards ;
+                    }
+               }        
+            
+            
+          }
+     }  
+
+}
+
+@keyframes main_container {
+     
+     0% {
+          background-position: left;
+     }     
+     100% {background-position: right;}
+}
+@keyframes check_container {
+     
+     0% {
+          
+          transform: translateX(200%);     }     
+     100% {
+          
+          transform: translateX(0%);
+     }
+}
+@keyframes check {    
+     
+     0% {
+          
+          transform:  rotate(90deg) ;
+     }  
+     100% {
+          
+          transform: rotate(360deg) ;
+     }
+}
+@keyframes text {    
+     
+     0% {
+          
+          transform: translateX(0%); ;
+     }  
+     100% {
+          
+          transform: translateX(-150%); ;
+     }
+}
+@keyframes shrink {    
+     
+     0% {         
+           width: 80%;
+     }  
+     100% {         
+          width : 60% ;
+     }
+}
+
+//reverse
+@keyframes main_container_rev {     
+     
+     0% {
+          
+          background-position: left;
+     }     
+     100% {
+          
+          background-position: right;
+     }
+}
+@keyframes check_container_rev {
+     
+     0% {
+          
+          transform: translateX(200%);
+     }     
+     100% {
+          
+          transform: translateX(0%);
+     }
+}
+@keyframes check_rev {    
+     
+     0% {
+          
+          transform:  rotate(90deg) ;
+     }  
+     100% {
+          
+          transform: rotate(360deg) ;
+     }
+}
+@keyframes text_rev {    
+     
+     0% {
+          
+          transform: translateX(0%); ;
+     }  
+     100% {
+          
+          transform: translateX(-150%); ;
+     }
+}
+@keyframes shrink_rev {    
+     
+     0% {         
+           width: 60%;
+     }  
+     100% {         
+          width : 80% ;
+     }
+}
+
+
+
+.menu-test{
+    display: flex;
+    flex-direction: column;
+    //justify-content: flex-start;
+    //align-items: flex-start;
+
+    width: 100%;
+    .container-test{
+     display: flex;
+     flex-direction: row;
+     flex:1;
+     //width: 100%;
 
      margin-top:  15px;
      margin-bottom: 15px;
@@ -175,105 +378,142 @@
      background-color: white;
 
      overflow: hidden;
+     .text-container-test{
+          display: flex;
+          flex-direction: row;
+          flex: 1;
+          max-width: 100%;
+          min-width: 80%;
 
-    // $padding:(20px 20px 20px 20px) ;
-          &__text{ 
-               display: flex;
-               flex:1 ;
-               flex-direction: column;
-               justify-content: center;
+          //flex:2;
+          //max-width: 100%;
+          justify-content: space-between;
 
-               width: 100%;
-               max-width: 100%;//oblige l overflow des children
-               min-width: 60%; //sa aussi car sinn i lprend par default min = auto =100%
+          .text-test{
                margin: 15px;
-               //height: 80px;
-              // padding: $padding;
-
+               display: flex;
+               flex-direction: column;
+               
+               //flex: 1;
+               width: 75%;
                h3{
+                    display: block;
                     margin-bottom: 5px;
-
-                    //nécessair pour l'overflow elilipsis 
-                    display: block; 
+                    
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
                }
                p{
-                    //nécessair pour l'overflow elilipsis 
                     display: block;
+                    
+                    
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;                   
                    
-                   
+     
                }
-
           }
-          &__price{
+          .price-test{
+               //display: inline-block;
+               //display: flex;
+               //flex: 2;
+               //width: 50px;
                display: flex;
-               justify-content: center;
+               justify-content: flex-end;
                align-items: flex-end;
 
-               width: 50px;
-               //min-width: 30px;
+               width: 25%;
 
-               padding: 20px ;
+              
 
-               font-weight: bold;
+     
           }
-          &__anim{
-               display: flex;               
-               flex: 0 1;
-               min-width: 0px;  
+     }
 
-               background-color: $tersiary-color;
+     
+     .animation-test{
+          //display: inline-flex;
+          //display: flex;
+          //flex: 2;
+          //width: 100px;
+          width: 0px;
+          height: 100%;
+          background-color: $tersiary-color;
+          .animation-test2{               
+               display: flex;
+               justify-content: center;
+               align-items: center;
 
-               animation: d3_rev 0.5s linear 0.25s both;              
-
-               .icon-container{
-                    position: relative;
-                    // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
-                    top: 25px;
-                    left: 20px;
-
+               height: 100%;
+               
+               i {
+               
+                    color: $tersiary-color;
+                    background-color: white;                  
+                   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+          
                     border-radius: 15px;
                     height: 30px;
                     width: 30px;
-                    
-                    animation: ico_rev 0.25s linear 0.25s forwards;
-                    i {
-               
-                         color: $tersiary-color;
-                         background-color: white;                  
-                        
-                         display: flex;
-                         align-items: center;
-                         justify-content: center;
-               
-                         border-radius: 15px;
-                         height: 30px;
-                         width: 30px;
-          
-                         //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
-                         }
-               }
-
-               
-                    
-          }
-          &:hover > .menu__element__anim {                
-               animation: d3 0.25s linear 0s forwards;
-               .icon-container{
-                   
-                   animation: ico 0.25s linear 0s forwards;
-               }
+     
+                    animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
+                    }
           }
 
+          //transform: translateX(500px);
+          //animation: testtrans2 0.5s 1s linear both;
+
+          //position: relative;
      }
+     &:hover > .animation-test{
+          //width: 100px;
+          animation: testtrans2 0.5s 0.5s linear both;
+          .animation-test2{
+               animation: testtrans 0.5s 0.5s linear both;
+               i{
+                    animation: check  0.5s 0.5s linear forwards ;
+               }
+          }
+          
+     }
+     
+    }
+
+}
+.menu-container-test{
+     //width: 100%;
 }
 
-
+@keyframes testtrans {
+     0%{
+          transform: translateX(50px);
+     }
+     100%{
+          transform: translateX(0);
+     
+}
+}
+@keyframes testtrans2 {
+     0%{
+          display: none;
+          width: 0px;
+     }
+     100%{
+          display: flex;
+          width: 80px
+         
+          //width: 100%;
+          //width: 100px;
+          //min-width: 50px;
+          
+     
+}
+}
 .menu-test{
      display: flex;
     flex-direction: column;

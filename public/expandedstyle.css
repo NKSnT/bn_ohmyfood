@@ -246,37 +246,71 @@ html {
   }
 }
 /*---------------------------------------------------------------*/
-.chk-anim .shrink-anim {
-  animation: shrink_rev 350ms 0s linear both alternate;
-}
-.chk-anim__container {
-  display: block;
-  position: relative;
-}
-.chk-anim__container .text-translate {
-  position: absolute;
-  bottom: 0px;
-  right: 5px;
-  animation: text_rev 350ms 0s linear reverse forwards;
-}
-.chk-anim__container .background-translate {
-  height: 77px;
-  width: 80px;
-  border-radius: 0px 16px 16px 0px;
-  background: linear-gradient(to right, white 50%, #99E2D0 50%);
-  background-size: 200% 100%;
+.menu__section {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  animation: main_container_rev 350ms 0s linear reverse both;
+  flex-direction: column;
+  width: 100%;
 }
-.chk-anim__container .background-translate .chk-translate {
+.menu__section .menu__element {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: white;
+  overflow: hidden;
+}
+.menu__section .menu__element__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 60%;
+  margin: 15px;
+}
+.menu__section .menu__element__text h3 {
+  margin-bottom: 5px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__section .menu__element__text p {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__section .menu__element__price {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 50px;
+  padding: 20px;
+  font-weight: bold;
+}
+.menu__section .menu__element__anim {
+  display: flex;
+  flex: 0 1;
+  min-width: 0px;
+  background-color: #99E2D0;
+  animation: d3_rev 0.5s linear 0.25s both;
+}
+.menu__section .menu__element__anim .icon-container {
+  position: relative;
+  top: 25px;
+  left: 20px;
+  border-radius: 15px;
   height: 30px;
   width: 30px;
-  animation: check_container_rev 350ms 0s linear reverse forwards;
+  animation: ico_rev 0.25s linear 0.25s forwards;
 }
-.chk-anim__container .background-translate .chk-translate i {
+.menu__section .menu__element__anim .icon-container i {
   color: #99E2D0;
   background-color: white;
   display: flex;
@@ -285,41 +319,112 @@ html {
   border-radius: 15px;
   height: 30px;
   width: 30px;
-  animation: check_rev 350ms 0s linear reverse forwards;
 }
-.chk-anim:hover .shrink-anim {
-  animation: shrink 350ms 0s linear both alternate;
+.menu__section .menu__element:hover > .menu__element__anim {
+  animation: d3 0.25s linear 0s forwards;
 }
-.chk-anim:hover .chk-anim__container .text-translate {
-  animation: text 350ms 0s linear forwards;
-}
-.chk-anim:hover .chk-anim__container .background-translate {
-  animation: main_container 350ms 0s linear both;
-}
-.chk-anim:hover .chk-anim__container .background-translate .chk-translate {
-  animation: check_container 350ms 0s linear forwards;
-}
-.chk-anim:hover .chk-anim__container .background-translate .chk-translate i {
-  animation: check 350ms 0s linear forwards;
+.menu__section .menu__element:hover > .menu__element__anim .icon-container {
+  animation: ico 0.25s linear 0s forwards;
 }
 
-@keyframes main_container {
+.menu-test {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.menu-test .d123 {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: white;
+  overflow: hidden;
+}
+.menu-test .d123 .d1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 60%;
+  height: 80px;
+  background-color: green;
+}
+.menu-test .d123 .d1 h3 {
+  display: block;
+  margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-test .d123 .d1 p {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu-test .d123 .d2 {
+  display: flex;
+  width: 50px;
+  min-width: 30px;
+  background-color: red;
+}
+.menu-test .d123 .d3 {
+  display: flex;
+  flex: 0 1;
+  min-width: 0px;
+  background-color: #99E2D0;
+  animation: d3_rev 0.5s linear 0.25s both;
+}
+.menu-test .d123 .d3 .d4 {
+  position: relative;
+  top: 25px;
+  left: 20px;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+  animation: ico_rev 0.25s linear 0.25s forwards;
+}
+.menu-test .d123 .d3 .d4 i {
+  color: #99E2D0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+}
+.menu-test .d123:hover .d3 {
+  animation: d3 0.25s linear 0s forwards;
+}
+.menu-test .d123:hover .d3 .d4 {
+  animation: ico 0.25s linear 0s forwards;
+}
+
+@keyframes d3 {
   0% {
-    background-position: left;
+    min-width: 0px;
   }
   100% {
-    background-position: right;
+    min-width: 70px;
   }
 }
-@keyframes check_container {
+/*inutile ?*/
+@keyframes d4 {
   0% {
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
-@keyframes check {
+@keyframes ico {
   0% {
     transform: rotate(90deg);
   }
@@ -327,60 +432,21 @@ html {
     transform: rotate(360deg);
   }
 }
-@keyframes text {
+/*revers animation*/
+@keyframes d3_rev {
   0% {
-    transform: translateX(0%);
+    min-width: 70px;
   }
   100% {
-    transform: translateX(-300%);
+    min-width: 0px;
   }
 }
-@keyframes shrink {
+@keyframes ico_rev {
   0% {
-    width: 80%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-@keyframes main_container_rev {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-@keyframes check_container_rev {
-  0% {
-    transform: translateX(200%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-@keyframes check_rev {
-  0% {
-    transform: rotate(90deg);
-  }
-  100% {
     transform: rotate(360deg);
   }
-}
-@keyframes text_rev {
-  0% {
-    transform: translateX(0%);
-  }
   100% {
-    transform: translateX(-300%);
-  }
-}
-@keyframes shrink_rev {
-  0% {
-    width: 60%;
-  }
-  100% {
-    width: 80%;
+    transform: rotate(90deg);
   }
 }
 /* font*/
@@ -426,7 +492,6 @@ li {
 
 .button {
   align-items: center;
-  justify-self: center;
   height: 55px;
   width: 60%;
   border-radius: 27.5px 27.5px 27.5px 27.5px;
@@ -737,45 +802,321 @@ li {
   font-size: 16px;
 }
 
+/*old
+.list{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-bottom: 30px;
+     &__title{
+          //pour eviter la  notif          
+          max-width: 100%;
+          margin-bottom: 25px;
+          font-weight: 300;
+
+
+     }     
+     &__ul{
+          width: 100%;
+     }
+     &__li{
+          display: flex;
+          flex-direction: row;
+          flex:1;
+          max-width: 100%;     
+          width: 100%;
+          //flex-grow: 0;
+
+          border-radius: 15px 15px 15px 15px;
+          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+          //padding remplacé par des marg sur les element
+          //padding: 15px 15px 15px 15px;
+          margin-top:  15px;
+          margin-bottom: 15px;
+
+          background-color: white;
+
+          font-weight: 300;         
+
+          .bold{
+               font-weight: bold;
+          }
+
+          &-element{
+
+               display: flex;
+               flex-direction: column;
+               //width: 70%;
+               flex:2;
+               //tout sa jcp si sa sert
+               //flex-basis: 0;
+               //flex-shrink: 2;
+               //flex: 1; peu peu etre servire marche pas 
+
+               margin: 15px;
+
+               h3{
+                    display: block;
+                    margin-bottom: 5px;
+
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+               }
+               p{
+                    display: block;
+
+
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;                   
+
+
+               }
+          }
+          &-price{
+               display: flex;
+               padding-right:20px ;
+               padding-bottom:15px ;
+          }
+
+
+     }
+
+}
+*/
+/*new v1
+.list{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-bottom: 30px;
+     &__title{
+          //pour eviter la  notif          
+          max-width: 100%;
+          margin-bottom: 25px;
+          font-weight: 300;
+     }     
+     &__ul{
+          display: flex;
+     flex-direction: column;
+     width: 100%;
+
+     }
+     .list__li{
+
+          display: flex;
+          flex-direction: row;
+          flex:1;
+          max-width: 100%;     
+          width: 100%;
+
+          border-radius: 15px 15px 15px 15px;
+          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+          //padding remplacé par des marg sur les element
+          //padding: 15px 15px 15px 15px;
+          margin-top:  15px;
+          margin-bottom: 15px;
+
+          background-color: white;
+
+          font-weight: 300;   
+          overflow: hidden;    
+
+
+
+          &-element{
+
+               display: flex;
+               flex:1 ;
+               flex-direction: column;
+               justify-content: center;
+
+               width: 100%;
+               max-width: 100%;//oblige l overflow des children
+               min-width: 20%; //sa aussi car sinn i lprend par default min = auto =100%
+
+               margin: 15px;
+
+               h3{
+                    margin-bottom: 5px;
+
+                    //nécessair pour l'overflow elilipsis 
+                    display: block; 
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+               }
+               p{
+                    //nécessair pour l'overflow elilipsis 
+                    display: block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;                   
+               }
+          }
+          &-price{
+               display: flex;
+               justify-content: center;
+               align-items: flex-end;
+
+               width: 50px;
+               min-width: 30px;
+
+               padding: 20px ;
+
+               font-weight: bold;
+
+
+
+
+               }
+               .menu__element__anim{
+                    display: flex;               
+                    flex: 0 1;
+                    min-width: 0px;  
+
+                    background-color: $tersiary-color;
+
+                    animation: d3_rev 0.5s linear 0.25s both;              
+
+                    .icon-container{
+                         position: relative;
+                         // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
+                         top: 25px;
+                         left: 20px;
+
+                         border-radius: 15px;
+                         height: 30px;
+                         width: 30px;
+
+                         animation: ico_rev 0.25s linear 0.25s forwards;
+                         i {
+
+                              color: $tersiary-color;
+                              background-color: white;                  
+
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+
+                              border-radius: 15px;
+                              height: 30px;
+                              width: 30px;
+
+                              //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
+                              }
+                    }     
+
+
+          }
+          &:hover > .menu__element__anim {                
+               animation: d3 0.25s linear 0s forwards;
+               .icon-container{
+
+                   animation: ico 0.25s linear 0s forwards;
+               }
+          }
+
+
+
+     }
+
+}
+*/
 .list {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  margin-bottom: 30px;
 }
 .list__title {
   max-width: 100%;
   margin-bottom: 25px;
   font-weight: 300;
 }
-.list__li {
+.list__ul {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+.list .list__li {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
   border-radius: 15px 15px 15px 15px;
   box-shadow: 2px 2px 4px #dbdbdb;
   margin-top: 15px;
   margin-bottom: 15px;
   background-color: white;
   font-weight: 300;
+  overflow: hidden;
 }
-.list__li .bold {
-  font-weight: bold;
-}
-.list__li-element {
+.list .list__li-text {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 20%;
   margin: 15px;
 }
-.list__li-element h3 {
-  display: block;
+.list .list__li-text h3 {
   margin-bottom: 5px;
+  display: block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.list__li-element p {
+.list .list__li-text p {
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+.list .list__li-price {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 50px;
+  min-width: 30px;
+  padding: 20px;
+  font-weight: bold;
+}
+.list .list__li-anim {
+  display: flex;
+  flex: 0 1;
+  min-width: 0px;
+  background-color: #99E2D0;
+  animation: d3_rev 0.5s linear 0.25s both;
+}
+.list .list__li-anim .icon-container {
+  position: relative;
+  top: 25px;
+  left: 20px;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+  animation: ico_rev 0.25s linear 0.25s forwards;
+}
+.list .list__li-anim .icon-container i {
+  color: #99E2D0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+}
+.list .list__li:hover > .list__li-anim {
+  animation: d3 0.25s linear 0s forwards;
+}
+.list .list__li:hover > .list__li-anim .icon-container {
+  animation: ico 0.25s linear 0s forwards;
 }
 
 .footer {

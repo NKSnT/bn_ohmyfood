@@ -1,5 +1,9 @@
+/*old
 .list{
+     display: flex;
+     flex-direction: column;
      width: 100%;
+     margin-bottom: 30px;
      &__title{
           //pour eviter la  notif          
           max-width: 100%;
@@ -8,11 +12,15 @@
           
 
      }     
+     &__ul{
+          width: 100%;
+     }
      &__li{
-          
           display: flex;
-          align-items: flex-end;
-          justify-content: space-between;
+          flex-direction: row;
+          flex:1;
+          max-width: 100%;     
+          width: 100%;
           //flex-grow: 0;
           
           border-radius: 15px 15px 15px 15px;
@@ -34,6 +42,8 @@
               
                display: flex;
                flex-direction: column;
+               //width: 70%;
+               flex:2;
                //tout sa jcp si sa sert
                //flex-basis: 0;
                //flex-shrink: 2;
@@ -59,12 +69,293 @@
                    
 
                }
-               
-               
-               
+          }
+          &-price{
+               display: flex;
+               padding-right:20px ;
+               padding-bottom:15px ;
           }
 
 
      }
 
 }
+*/
+/*new v1
+.list{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-bottom: 30px;
+     &__title{
+          //pour eviter la  notif          
+          max-width: 100%;
+          margin-bottom: 25px;
+          font-weight: 300;
+     }     
+     &__ul{
+          display: flex;
+     flex-direction: column;
+     width: 100%;
+          
+     }
+     .list__li{
+
+          display: flex;
+          flex-direction: row;
+          flex:1;
+          max-width: 100%;     
+          width: 100%;
+          
+          border-radius: 15px 15px 15px 15px;
+          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+          //padding remplacé par des marg sur les element
+          //padding: 15px 15px 15px 15px;
+          margin-top:  15px;
+          margin-bottom: 15px;
+
+          background-color: white;
+
+          font-weight: 300;   
+          overflow: hidden;    
+
+         
+
+          &-element{
+
+               display: flex;
+               flex:1 ;
+               flex-direction: column;
+               justify-content: center;
+
+               width: 100%;
+               max-width: 100%;//oblige l overflow des children
+               min-width: 20%; //sa aussi car sinn i lprend par default min = auto =100%
+
+               margin: 15px;
+
+               h3{
+                    margin-bottom: 5px;
+
+                    //nécessair pour l'overflow elilipsis 
+                    display: block; 
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+               }
+               p{
+                    //nécessair pour l'overflow elilipsis 
+                    display: block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;                   
+               }
+          }
+          &-price{
+               display: flex;
+               justify-content: center;
+               align-items: flex-end;
+
+               width: 50px;
+               min-width: 30px;
+
+               padding: 20px ;
+
+               font-weight: bold;
+               
+     
+                    
+                         
+               }
+               .menu__element__anim{
+                    display: flex;               
+                    flex: 0 1;
+                    min-width: 0px;  
+     
+                    background-color: $tersiary-color;
+     
+                    animation: d3_rev 0.5s linear 0.25s both;              
+     
+                    .icon-container{
+                         position: relative;
+                         // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
+                         top: 25px;
+                         left: 20px;
+     
+                         border-radius: 15px;
+                         height: 30px;
+                         width: 30px;
+                         
+                         animation: ico_rev 0.25s linear 0.25s forwards;
+                         i {
+                    
+                              color: $tersiary-color;
+                              background-color: white;                  
+                             
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                    
+                              border-radius: 15px;
+                              height: 30px;
+                              width: 30px;
+               
+                              //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
+                              }
+                    }     
+              
+              
+          }
+          &:hover > .menu__element__anim {                
+               animation: d3 0.25s linear 0s forwards;
+               .icon-container{
+                   
+                   animation: ico 0.25s linear 0s forwards;
+               }
+          }
+          
+
+
+     }
+
+}
+*/
+///*v2
+.list{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-bottom: 30px;
+     &__title{
+          //pour eviter la  notif          
+          max-width: 100%;
+          margin-bottom: 25px;
+          font-weight: 300;
+     }     
+     &__ul{
+          display: flex;
+     flex-direction: column;
+     width: 100%;
+          
+     }
+     .list__li{
+
+          display: flex;
+          flex-direction: row;
+          flex:1;
+          max-width: 100%;     
+          width: 100%;
+          
+          border-radius: 15px 15px 15px 15px;
+          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+          //padding remplacé par des marg sur les element
+          //padding: 15px 15px 15px 15px;
+          margin-top:  15px;
+          margin-bottom: 15px;
+
+          background-color: white;
+
+          font-weight: 300;   
+          overflow: hidden;    
+
+         
+
+          &-text{
+
+               display: flex;
+               flex:1 ;
+               flex-direction: column;
+               justify-content: center;
+
+               width: 100%;
+               max-width: 100%;//oblige l overflow des children
+               min-width: 20%; //sa aussi car sinn i lprend par default min = auto =100%
+
+               margin: 15px;
+
+               h3{
+                    margin-bottom: 5px;
+
+                    //nécessair pour l'overflow elilipsis 
+                    display: block; 
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+               }
+               p{
+                    //nécessair pour l'overflow elilipsis 
+                    display: block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;                   
+               }
+          }
+          &-price{
+               display: flex;
+               justify-content: center;
+               align-items: flex-end;
+
+               width: 50px;
+               min-width: 30px;
+
+               padding: 20px ;
+
+               font-weight: bold;
+               
+     
+                    
+                         
+               }
+               &-anim{
+                    display: flex;               
+                    flex: 0 1;
+                    min-width: 0px;  
+     
+                    background-color: $tersiary-color;
+     
+                    animation: d3_rev 0.5s linear 0.25s both;              
+     
+                    .icon-container{
+                         position: relative;
+                         // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
+                         top: 25px;
+                         left: 20px;
+     
+                         border-radius: 15px;
+                         height: 30px;
+                         width: 30px;
+                         
+                         animation: ico_rev 0.25s linear 0.25s forwards;
+                         i {
+                    
+                              color: $tersiary-color;
+                              background-color: white;                  
+                             
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                    
+                              border-radius: 15px;
+                              height: 30px;
+                              width: 30px;
+               
+                              //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
+                              }
+                    }     
+              
+              
+          }
+          &:hover > .list__li-anim {                
+               animation: d3 0.25s linear 0s forwards;
+               .icon-container{
+                   
+                   animation: ico 0.25s linear 0s forwards;
+               }
+          }
+          
+
+
+     }
+
+}
+//*/
