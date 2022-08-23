@@ -1,4 +1,5 @@
-@use "sass:math";
+/*---------display---------*/
+/*-----------------------*/
 
 .content-display{
     // position: absolute;//why sa ?
@@ -7,7 +8,7 @@
     
     animation: page_display 0s $page-disp-delay forwards;   
 }
-.content-display--menu{
+.content-display--menu{ //usefull if only one list
 
      opacity: 0;
      animation: menu_display $menu-section_duration $menu-section_delay ease-out forwards;
@@ -26,26 +27,23 @@
      }  
           
 }         
-.content-display--menu2{
-     @for $n from 1 through 4 {
+.content-display--menu2{ //for multiple figure list delay display 
+     @for $n from 1 through 5 {
               
           figure:nth-child(#{$n}) {
              opacity: 0;
             // Delay the animation. Delay increases as items loop.
-            $animation1_delay: (($n * $menu-section_delay) + (($n - 1) * $menu-section_duration) + $menu-section_delay-mod);
-            
+            $animation1_delay: (($n * $menu-section_delay) + (($n - 1) * $menu-section_duration) + $menu-section_delay-mod);            
             animation: menu_display $menu-child_duration $animation1_delay ease-in-out forwards;
-            //animation: menu_display $menu-child_duration 0.5s ease-in-out forwards;
+            
             ul {     
 
-               @for $i from 1 through 5 {
+               @for $i from 1 through 10 {
                    
                       li:nth-child(#{$i}) {
                          opacity: 0;
                         // Delay the animation. Delay increases as items loop.
-                         $parent_delay: $animation1_delay + $menu-section_duration ;
-                        //$parent_delay: 0.5s;
-                       // $animation2_delay: (($i * $menu-child_delay) + $menu-firstchild_delay-mod) ;
+                         $parent_delay: $animation1_delay + $menu-section_duration ;                        
                          $animation2_delay: (($i * $menu-child_delay) + ($menu-firstchild_delay-mod + $parent_delay)) ;
                          animation: menu_display $menu-child_duration $animation2_delay ease-in-out forwards;
                       }
@@ -55,6 +53,8 @@
         }
 }
               
+/*---------loader---------*/
+/*-----------------------*/
 
 
 .loading-spinner{
@@ -65,13 +65,11 @@
      $vertical_center: -(($diameter * 0.5)+25px);
      //+25 compence le decalage donner par le header ? enfin bref valeur magique
 
-     
-
      position: fixed;
      
      top: 50%;
      
-     margin-top: $vertical_center ;//serta centrer le loader avec le haut
+     margin-top: $vertical_center ;//sert a centrer le loader avec le haut
      //margin-top: 50%;
      width: $diameter;
      height: $diameter;
@@ -83,7 +81,6 @@
      
      animation: loader $loader-duration $loader-delay cubic-bezier(0.3, 0.3, 1, 1) $time-repeat;
 
-     //display: none;
      opacity: 0;
    
      &:before {
@@ -101,8 +98,36 @@
      box-shadow: inset 0px 0px 100px -70px 
      }
 }
+/*---------check animation---------*/
+/*-----------------------*/
+.list__li-anim{
+     animation: d3_rev $check__duration linear $check__delay both;
+}
 
 
+.list__li:hover > .list__li-anim {                
+     animation: d3 $check__duration linear $check__delay both;
+     .icon-container{
+         animation: ico $check__duration linear $check__delay both;
+     }
+}
+.list__li--big:hover > .list__li-anim {                
+     animation: d3 $check__duration linear $check__delay both;
+     .icon-container--big{
+         animation: ico $check__duration linear $check__delay both;
+     }
+}
+
+.icon-container{
+     animation: ico_rev $check__duration linear $check__delay both;
+}
+.icon-container--big{
+     animation: ico_rev $check__duration linear $check__delay both;
+}
+
+
+
+/*
 @keyframes loader {
      0%{
           transform: rotate(0deg);
@@ -127,338 +152,64 @@
 
 @keyframes page_display{
      0% {
-         //transform: translateX(-9999px);
-         //scale:0;
          opacity: 0;
      }
      100% {
-         //transform: translateX(0);
-         
-        // scale:1;
-        opacity: 1;
+          opacity: 1;
      }
  }
  @keyframes menu_display{
      0% {
-         //transform: translateX(-9999px);
-         //scale:0;
+         
          opacity: 0;
          transform: translateY(50px);
      }
      100% {
-         //transform: translateX(0);
-         
-        // scale:1;
-        opacity: 1;
-        transform: translateY(0);
+          opacity: 1;
+          transform: translateY(0);
      }
  }
+ */
 
  /*---------------------------------------------------------------*/
 
- .menu__section{
-     display: flex;
-    flex-direction: column;
-    width: 100%;
-     .menu__element{
-          display: flex;
-          flex-direction: row;
-          flex:1;
-          max-width: 100%;     
-          width: 100%;
-     
-
-     margin-top:  15px;
-     margin-bottom: 15px;
-     
-     border-radius: 15px 15px 15px 15px;
-     background-color: white;
-
-     overflow: hidden;
-
-    // $padding:(20px 20px 20px 20px) ;
-          &__text{ 
-               display: flex;
-               flex:1 ;
-               flex-direction: column;
-               justify-content: center;
-
-               width: 100%;
-               max-width: 100%;//oblige l overflow des children
-               min-width: 60%; //sa aussi car sinn i lprend par default min = auto =100%
-               margin: 15px;
-               //height: 80px;
-              // padding: $padding;
-
-               h3{
-                    margin-bottom: 5px;
-
-                    //nécessair pour l'overflow elilipsis 
-                    display: block; 
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-               }
-               p{
-                    //nécessair pour l'overflow elilipsis 
-                    display: block;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;                   
-                   
-                   
-               }
-
-          }
-          &__price{
-               display: flex;
-               justify-content: center;
-               align-items: flex-end;
-
-               width: 50px;
-               //min-width: 30px;
-
-               padding: 20px ;
-
-               font-weight: bold;
-          }
-          &__anim{
-               display: flex;               
-               flex: 0 1;
-               min-width: 0px;  
-
-               background-color: $tersiary-color;
-
-               animation: d3_rev 0.5s linear 0.25s both;              
-
-               .icon-container{
-                    position: relative;
-                    // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
-                    top: 25px;
-                    left: 20px;
-
-                    border-radius: 15px;
-                    height: 30px;
-                    width: 30px;
-                    
-                    animation: ico_rev 0.25s linear 0.25s forwards;
-                    i {
-               
-                         color: $tersiary-color;
-                         background-color: white;                  
-                        
-                         display: flex;
-                         align-items: center;
-                         justify-content: center;
-               
-                         border-radius: 15px;
-                         height: 30px;
-                         width: 30px;
-          
-                         //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
-                         }
-               }
-
-               
-                    
-          }
-          &:hover > .menu__element__anim {                
-               animation: d3 0.25s linear 0s forwards;
-               .icon-container{
-                   
-                   animation: ico 0.25s linear 0s forwards;
-               }
-          }
-
-     }
-}
-
-
-.menu-test{
-     display: flex;
-    flex-direction: column;
-    width: 100%;
-     .d123{
-          display: flex;
-     flex-direction: row;
-     flex:1;
-     max-width: 100%;
-     
-     width: 100%;
-     
-
-     margin-top:  15px;
-     margin-bottom: 15px;
-     
-     border-radius: 15px 15px 15px 15px;
-     background-color: white;
-
-     overflow: hidden;
-          .d1{ 
-               display: flex;
-               flex:1 ;
-               flex-direction: column;
-               justify-content: center;
-
-               width: 100%;
-               max-width: 100%;//oblige l overflow des children
-               min-width: 60%; //sa aussi car sinn i lprend par default min = auto =100%
-
-               height: 80px;
-
-               background-color: green;
-
-
-               h3{
-                    display: block;
-                    margin-bottom: 5px;
-                    
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-               }
-               p{
-                    display: block;
-                    
-                    
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;                   
-                   
-                   
-               }
-
-          }
-          .d2{
-               display: flex;
-               width: 50px;
-               min-width: 30px;
-               //flex:1;
-               background-color: red;
-          }
-          .d3{
-               display: flex;
-               
-               flex: 0 1;
-               min-width: 0px; 
-               //width: 50px;
-               //min-width: 50px;
-               
-               //translate: 100%;
-               background-color: $tersiary-color;
-
-               animation: d3_rev 0.5s linear 0.25s both;
-              
-
-               .d4{
-                    position: relative;
-                    // donne les decalage pour centré l element, a fair en automatiqeu avec des variable ? 
-                    top: 25px;
-                    left: 20px;
-
-                    border-radius: 15px;
-                    height: 30px;
-                    width: 30px;
-                    //translate: 100%;
-                    animation: ico_rev 0.25s linear 0.25s forwards;
-                    i {
-               
-                         color: $tersiary-color;
-                         background-color: white;                  
-                        
-                         display: flex;
-                         align-items: center;
-                         justify-content: center;
-               
-                         border-radius: 15px;
-                         height: 30px;
-                         width: 30px;
-          
-                         //animation: check_rev  $check-anim__duration $check-anim__delay linear reverse forwards ;
-                         }
-               }
-
-               
-                    
-          }
-          &:hover .d3{
-              
-               //min-width: 50px;     
-               //translate: 0;
-                
-               animation: d3 0.25s linear 0s forwards;
-               .d4{
-                   // animation: d4 0.25s linear 0s forwards;
-                   animation: ico 0.25s linear 0s forwards;
-               }
-          }
-
-     }
-}
+/*
 @keyframes d3 {
      0%{
-          
-          //transform: translateX(100%);
-          //flex: 0 1;
-          //translate: 100%;
+       
           min-width: 0px;
      }
      100%{
-          
-          //flex: 1;
-          //min-width: 80px;
-          //min-width: 80px;
-          //translate: 0;
-          min-width: 70px;
-          //transform: translateX(0);
-          
-     
-}
-}
-/*inutile ?*/
-@keyframes d4 {
-     0%{
-         transform: translateX(100%);
+         min-width: 70px;
      }
-     100%{
-          transform: translateX(0);
-}
 }
 @keyframes ico{    
-     
      0% {
-          
           transform:  rotate(90deg) ;
      }  
      100% {
-          
           transform: rotate(360deg) ;
      }
 }
+*/
 /*revers animation*/
+/*
 @keyframes d3_rev {
      0%{
-          
-         
-          min-width: 70px;
+         min-width: 70px;
      }
      100%{
-          
-        
           min-width: 0px;
-        
-     
-}
+     }
 }
 @keyframes ico_rev{    
-     
      0% {
-          
-          transform:  rotate(360deg) ;
+         transform:  rotate(360deg) ;
      }  
      100% {
-          
           transform: rotate(90deg) ;
      }
 }
+
+*/
 
