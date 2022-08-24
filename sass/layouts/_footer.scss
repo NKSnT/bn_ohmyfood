@@ -24,9 +24,17 @@
 }
 
 .footer__container{
-     width: 100%;
-     padding: 30px 20px 10px 20px ;
+     width: 100%;     
      background-color:$grey_dark;
+     display: flex;
+     justify-content: center;
+     .footer{
+          width: 100%;
+          max-width: 1200px;
+
+          padding: 30px 20px 50px 20px ;
+          //margin: 0;
+     }
    
      
 }

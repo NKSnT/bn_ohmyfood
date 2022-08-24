@@ -4,7 +4,7 @@
      flex-direction: column;
      width: 100%;
      height: fit-content;
-     margin-bottom: 30px;
+     margin-bottom: 30px;     
      &__title{
             
           max-width: 100%;
@@ -36,27 +36,7 @@
           background-color: white;
 
           font-weight: 300;   
-          overflow: hidden;
-          &--big{
-               display: flex;
-          flex-direction: row;
-          flex:1;
-          max-width: 100%;     
-          width: 100%;
-
-          min-height: 100px;
-                   
-          border-radius: 15px 15px 15px 15px;
-          box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
-          
-          margin-top:  15px;
-          margin-bottom: 15px;
-
-          background-color: white;
-
-          font-weight: 300;   
-          overflow: hidden;               
-          }           
+          overflow: hidden;                    
 
           &-text{
 
@@ -80,10 +60,7 @@
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     
-               }
-               .h3mod{
-                    margin-bottom: 0px;
-               }
+               }               
                p{
                     //nécessair pour l'overflow elilipsis 
                     display: block;
@@ -134,27 +111,7 @@
                          height: 30px;
                          width: 30px;
                     }
-                    &--big{position: relative;
-                              // donne les decalage pour centré l element                          
-                         top: 35px;
-                         left:20px;
-          
-                         border-radius: 15px;
-                         height: 30px;
-                         width: 30px;
-                    i {
-                         color: $tersiary-color;
-                         background-color: white;                  
-                                  
-                         display: flex;
-                         align-items: center;
-                         justify-content: center;
-                         
-                         border-radius: 15px;
-                         height: 30px;
-                         width: 30px;                    
-                    }     
-                    }
+                    
                } 
           }
           

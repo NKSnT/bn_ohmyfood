@@ -111,17 +111,9 @@
          animation: ico $check__duration linear $check__delay both;
      }
 }
-.list__li--big:hover > .list__li-anim {                
-     animation: d3 $check__duration linear $check__delay both;
-     .icon-container--big{
-         animation: ico $check__duration linear $check__delay both;
-     }
-}
+
 
 .icon-container{
-     animation: ico_rev $check__duration linear $check__delay both;
-}
-.icon-container--big{
      animation: ico_rev $check__duration linear $check__delay both;
 }
 

@@ -15,9 +15,12 @@
      box-shadow: 0px 2px 7px darken($color: $grey, $amount: 27.5);
      //box-shadow: 0px 2px 5px red;
      
-
      background:linear-gradient($secondary-color,$primary-color) ;
      color: white;
+     @include respond(large) {             
+          background: $primary-color;
+          width: 40%;                                         
+        } 
      &:hover{
                     
           $lighten-bc-color1: lighten($color: $secondary-color, $amount: 2.5);
@@ -26,6 +29,9 @@
           background: linear-gradient($lighten-bc-color1,$lighten-bc-color2);
 
           box-shadow: 0px 2px 7px  darken($color: $grey, $amount: 55);
+          @include respond(large) {             
+               background: lighten($color: $primary-color, $amount: 4.5);                                 
+             } 
      }
 }
 

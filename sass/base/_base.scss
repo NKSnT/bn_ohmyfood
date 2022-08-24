@@ -15,7 +15,7 @@ html {-webkit-text-size-adjust: 100%;}
 .main_container{
      width: 100%;
      display:flex;
-     justify-content: center;
+     justify-content: center;     
 }
 
 .wrapper{
@@ -26,7 +26,11 @@ html {-webkit-text-size-adjust: 100%;}
      flex-direction: column;
 
      /*contruction help*/
-     max-width: 600px;
+     max-width: 1200px; 
+     @include respond(large) {             
+          background: $tersiary-color;
+                       
+        }    
      
 }   
 

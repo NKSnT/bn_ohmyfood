@@ -7,6 +7,16 @@
      background-color: white;
 
      box-shadow: 2px 2px 4px darken($color: $grey, $amount: 10);
+     @include respond(large) {
+         
+          margin-top: 0px ;
+          margin-bottom: 80px;
+          width: 450px;
+        } 
+        @include respond(mediumonly) {         
+          
+          width: 650px;
+        } 
      &__link{
           display: flex;
           flex-direction: column;

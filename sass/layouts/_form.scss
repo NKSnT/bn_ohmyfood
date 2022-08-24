@@ -2,6 +2,9 @@
      background-color: darken($grey , $amount: 4);
      height: 50px;
      width: 100%;
+     @include respond(large) {              
+          border-radius: 30px 30px 30px 30px;
+        } 
      
      p{
           display: flex;
@@ -17,5 +20,6 @@
           
           font-weight: 700;
           font-size: 18px;
+         
      }     
 }
