@@ -53,13 +53,10 @@
                }
                          
            
-          &:active + .heart-btn--on{ 
-               //transform: scale(1.05); premiere version, avec la transformation sans les keyframe
-               //transition: transform 1s;
-               //transform: scale(0);
+          &:active + .heart-btn--on{                
                animation: favorite 0.5s ;  
-               animation-fill-mode: forwards;        
-               scale: 1.15;  
+               animation-fill-mode: both;        
+               
 
           }
      }
@@ -73,9 +70,8 @@
           -moz-text-fill-color: transparent;
 
           font-size: x-large;
-
-          scale: 0;
-
+          transform: scale(0);
+         
      }
 }
 .relativ-heart-btn {
@@ -87,21 +83,14 @@
 @keyframes favorite{
      0% {
          transform: scale(0);
-         //opacity: 1; test avec les keyframe, pas utile 
+        
      }
      90%{
           transform: scale(1.1);
      }
      100% {
          transform: scale(1);
-         //opacity: 1;
+         
      }
  }
 
- .return--arrow{
-     //display: inline;
-     //position: relative;
-     //right: 80px;
-     //display: nones;
-     //justify-self:left;
- }
