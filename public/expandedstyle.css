@@ -601,8 +601,7 @@ li {
 }
 .heart-btn--off:active + .heart-btn--on {
   animation: favorite 0.5s;
-  animation-fill-mode: forwards;
-  scale: 1.15;
+  animation-fill-mode: both;
 }
 .heart-btn--on {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -613,7 +612,7 @@ li {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   font-size: x-large;
-  scale: 0;
+  transform: scale(0);
 }
 
 .relativ-heart-btn {
