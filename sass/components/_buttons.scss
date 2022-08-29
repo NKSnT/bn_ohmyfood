@@ -17,6 +17,7 @@
      
      background:linear-gradient($secondary-color,$primary-color) ;
      color: white;
+     font-size: 16px;
      @include respond(large) {             
           background: $primary-color;
           width: 40%;                                         
