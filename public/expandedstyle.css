@@ -570,6 +570,7 @@ li {
   box-shadow: 0px 2px 7px #aeaeae;
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
+  font-size: 16px;
 }
 @media (min-width: 991px) {
   .button {
